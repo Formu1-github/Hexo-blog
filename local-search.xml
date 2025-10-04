@@ -8,7 +8,7 @@
     <link href="/Hexo-blog/2025/10/04/%E6%B5%8B%E8%AF%95/"/>
     <url>/Hexo-blog/2025/10/04/%E6%B5%8B%E8%AF%95/</url>
     
-    <content type="html"><![CDATA[<p>☀️</p><p>::::info[我是标题]<br>大家好啊，我是说的道理，今天来点大家想看的东西。<br>::::</p><p>::::info[我是默认展开的折叠框]{open}<br>使用 <code>{open}</code> 使折叠框默认展开。<br>::::</p><p>::::success[$$\displaystyle\sum_{i = 1}^n \sum_{j = 1}^n \gcd(i, j)$$]<br>数学公式也是可以出现在标题上的。<br>::::</p><p>::::warning[警告]<br>这是一个警告框。<br>::::</p><p>::::error[错误]<br>这是一个错误框。<br>::::</p><div class="warning"><p>这是一个警告框</p></div><div class="tip"><p>这是一个提示框</p></div><div class="note"><p>这是一个注释框</p></div>]]></content>
+    <content type="html"><![CDATA[<p>☀️</p><div class="warning"><p>这是一个警告框</p></div><div class="tip"><p>这是一个提示框</p></div><div class="note"><p>这是一个注释框</p></div><div class="success"><p>这是一个警告框</p></div><div class="error"><p>这是一个提示框</p></div><div class="info"><p>这是一个注释框</p></div><p>::: danger<br>这是一个注释框<br>:::</p>]]></content>
     
     
     
