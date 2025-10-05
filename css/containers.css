@@ -1,49 +1,42 @@
-.custom-container {
-  margin: 1rem 0;
-  padding: 1rem 1.5rem;
-  border-left-width: 4px;
-  border-left-style: solid;
-  border-radius: 0 4px 4px 0;
-}
-
-.custom-container.tip {
-  background-color: rgba(52,152,219,0.1);
-  border-left-color: #3498db;
+.tip {
+  padding-left: 10px;
+  background-color: rgba(52,152,219,0.3);
+  border-left: 4px solid #3498db;
   color: #217bb8;
 }
-
-.custom-container.success {
-  background-color: rgba(46,204,113,0.1);
-  border-left-color: #2ecc71;
+.success {
+  padding-left: 10px;
+  background-color: rgba(46,204,113,0.3);
+  border-left: 4px solid #2ecc71;
   color: #25a35a;
 }
-
-.custom-container.warning {
-  background-color: rgba(241,196,15,0.1);
-  border-left-color: #f1c40f;
+.warning {
+  padding-left: 10px;
+  background-color: rgba(241,196,15,0.3);
+  border-left: 4px solid #f1c40f;
   color: #c29d0b;
 }
-
-.custom-container.error {
-  background-color: rgba(231,76,60,0.1);
-  border-left-color: #e74c3c;
+.error {
+  padding-left: 10px;
+  background-color: rgba(231,76,60,0.3);
+  border-left: 4px solid #e74c3c;
   color: #cf2b1a;
 }
-
-.custom-container.danger {
-  background-color: rgba(231,76,60,0.1);
-  border-left-color: #e74c3c;
+.danger {
+  padding-left: 10px;
+  background-color: rgba(231,76,60,0.3);
+  border-left: 4px solid #e74c3c;
   color: #cf2b1a;
 }
-
-.custom-container.comment {
-  background-color: rgba(209,197,196,0.1);
-  border-left-color: #d1c5c4;
+.comment {
+  padding-left: 10px;
+  background-color: rgba(209,197,196,0.3);
+  border-left: 4px solid #d1c5c4;
   color: #ae9896;
 }
-
-.custom-container.info {
-  background-color: rgba(52,152,219,0.1);
-  border-left-color: #3498db;
+.info {
+  padding-left: 10px;
+  background-color: rgba(52,152,219,0.3);
+  border-left: 4px solid #3498db;
   color: #217bb8;
 }

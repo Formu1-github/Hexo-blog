@@ -8,7 +8,7 @@
     <link href="/Hexo-blog/2025/10/04/%E6%B5%8B%E8%AF%95/"/>
     <url>/Hexo-blog/2025/10/04/%E6%B5%8B%E8%AF%95/</url>
     
-    <content type="html"><![CDATA[<p>☀️</p><div class="warning"><p>这是一个警告框</p></div><div class="tip"><p>这是一个提示框</p></div><p>::: comment<br>这是一个注释框<br>:::</p><div class="success"><p>这是一个警告框</p></div><div class="error"><p>这是一个提示框</p></div><div class="info"><p>这是一个注释框</p></div><p>::: danger<br>这是一个注释框<br>:::</p>]]></content>
+    <content type="html"><![CDATA[<p>☀️</p><div class="warning"><p><strong>warning!</strong><br>warning!</p></div><div class="tip"><p><strong>tip.</strong><br>tip</p></div><div class="comment"><p><strong>comment</strong><br>//斜杠</p></div><div class="success"><p><strong>success</strong><br>成功！</p></div><div class="error"><p><strong>error!</strong><br>错误</p></div><div class="info"><p><strong>信息</strong><br>info</p></div><div class="danger"><p><strong>危险！</strong><br>danger</p></div>]]></content>
     
     
     
