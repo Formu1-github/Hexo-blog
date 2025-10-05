@@ -1508,48 +1508,6 @@ hr,
 .markdown-body figcaption:not(.image-caption) {
   display: none;
 }
-.tip {
-  padding-left: 10px;
-  background-color: rgba(52,152,219,0.3);
-  border-left: 4px solid #3498db;
-  color: #217bb8;
-}
-.success {
-  padding-left: 10px;
-  background-color: rgba(46,204,113,0.3);
-  border-left: 4px solid #2ecc71;
-  color: #25a35a;
-}
-.warning {
-  padding-left: 10px;
-  background-color: rgba(241,196,15,0.3);
-  border-left: 4px solid #f1c40f;
-  color: #c29d0b;
-}
-.error {
-  padding-left: 10px;
-  background-color: rgba(231,76,60,0.3);
-  border-left: 4px solid #e74c3c;
-  color: #cf2b1a;
-}
-.danger {
-  padding-left: 10px;
-  background-color: rgba(231,76,60,0.3);
-  border-left: 4px solid #e74c3c;
-  color: #cf2b1a;
-}
-.comment {
-  padding-left: 10px;
-  background-color: rgba(209,197,196,0.3);
-  border-left: 4px solid #d1c5c4;
-  color: #ae9896;
-}
-.info {
-  padding-left: 10px;
-  background-color: rgba(52,152,219,0.3);
-  border-left: 4px solid #3498db;
-  color: #217bb8;
-}
 .post-content,
 post-custom {
   box-sizing: border-box;
