@@ -1,42 +1,133 @@
+:root{
+  --tip-container-text-color: hsl(204, 70%, 43%);
+  --tip-container-image: linear-gradient(20deg, rgb(52 152 219 / 30%), rgb(52 152 219 / 20%));
+
+  --success-container-text-color: hsl(145, 63%, 39%);
+  --success-container-image: linear-gradient(20deg, rgb(46 204 113 / 30%), rgb(46 204 113 / 20%));
+
+  --warning-container-text-color: hsl(48 89% 40% / 1);
+  --warning-container-image: linear-gradient(20deg, rgb(241 196 15 / 30%), rgb(241 196 15 / 20%));
+
+  --error-container-text-color: hsl(6, 78%, 46%);
+  --error-container-image: linear-gradient(20deg, rgb(231 76 60 / 30%), rgb(231 76 60 / 20%));
+
+  /* --danger-container-text-color: hsl(6, 78%, 46%);
+  --danger-container-image: linear-gradient(20deg, rgb(231 76 60 / 30%), rgb(231 76 60 / 20%)); */
+
+
+  --comment-container-text-color: hsl(5, 13%, 50%);
+  --comment-container-image: linear-gradient(20deg, rgb(209 197 196 / 30%), rgb(209 197 196 / 20%));
+
+  /* --info-container-text-color: hsl(204, 70%, 43%);
+  --info-container-image: linear-gradient(20deg, rgb(52 152 219 / 30%), rgb(52 152 219 / 20%)); */
+}
+
+
+
+
+[data-user-color-scheme="dark"]{
+
+  --tip-container-text-color: hsl(204, 70%, 55%);
+  --tip-container-image: linear-gradient(to top right, rgb(52 152 219 / 35%), rgb(52 152 219 / 55%));
+
+  --success-container-text-color: hsl(145, 63%, 55%);
+  --success-container-image: linear-gradient(to top right, rgb(46 204 113 / 35%), rgb(46 204 113 / 55%));
+
+  --warning-container-text-color: hsl(48 89% 55% / 1);
+  --warning-container-image: linear-gradient(to top right, rgb(241 196 15 / 35%), rgb(241 196 15 / 55%));
+
+  --error-container-text-color: hsl(6, 78%, 55%);
+  --error-container-image: linear-gradient(to top right, rgb(231 76 60 / 35%), rgb(231 76 60 / 55%));
+
+  /* --danger-container-text-color: hsl(6, 78%, 55%);
+  --danger-container-image: linear-gradient(to top right, rgb(231 76 60 / 35%), rgb(231 76 60 / 55%)); */
+
+  --comment-container-text-color: hsl(5, 13%, 80%);
+  --comment-container-image: linear-gradient(to top right, rgb(209 197 196 / 35%), rgb(209 197 196 / 55%));
+
+  /* --info-container-text-color: hsl(204, 70%, 55%);
+  --info-container-image: linear-gradient(to top right, rgb(52 152 219 / 35%), rgb(52 152 219 / 55%)); */
+}
+
+
+
+
+
 .tip {
-  padding-left: 10px;
-  background-color: rgba(52,152,219,0.3);
-  border-left: 4px solid #3498db;
-  color: #217bb8;
+  padding-left: 12px;
+
+  background-image: var(--tip-container-image);
+  background-repeat: no-repeat !important;
+
+  border-left: 5px solid #3498db !important;
+  border-left-width: thick !important;
+  border-radius: 4px !important;
+  color: var(--tip-container-text-color) !important;
 }
 .success {
-  padding-left: 10px;
-  background-color: rgba(46,204,113,0.3);
-  border-left: 4px solid #2ecc71;
-  color: #25a35a;
+  padding-left: 12px;
+
+  background-image: var(--success-container-image);
+  background-repeat: no-repeat !important;
+
+  border-left: 5px solid #2ecc71 !important;
+  border-left-width: thick !important;
+  border-radius: 4px !important;
+  color: var(--success-container-text-color) !important;
 }
 .warning {
-  padding-left: 10px;
-  background-color: rgba(241,196,15,0.3);
-  border-left: 4px solid #f1c40f;
-  color: #c29d0b;
+  padding-left: 12px;
+
+  background-image: var(--warning-container-image);
+  background-repeat: no-repeat !important;
+  
+  border-left: 5px solid #f1c40f !important;
+  border-left-width: thick !important;
+  border-radius: 4px !important;
+  color: var(--warning-container-text-color) !important;
 }
 .error {
-  padding-left: 10px;
-  background-color: rgba(231,76,60,0.3);
-  border-left: 4px solid #e74c3c;
-  color: #cf2b1a;
+  padding-left: 12px;
+
+  background-image: var(--error-container-image);
+  background-repeat: no-repeat !important;
+
+  border-left: 5px solid #e74c3c !important;
+  border-left-width: thick !important;
+  border-radius: 4px !important;
+  color: var(--error-container-text-color) !important;
 }
+/*借用error*/
 .danger {
-  padding-left: 10px;
-  background-color: rgba(231,76,60,0.3);
-  border-left: 4px solid #e74c3c;
-  color: #cf2b1a;
+  padding-left: 12px;
+
+  background-image: var(--error-container-image);
+  background-repeat: no-repeat !important;
+
+  border-left: 5px solid #e74c3c !important;
+  border-left-width: thick !important;
+  border-radius: 4px !important;
+  color: var(--error-container-text-color) !important;
 }
 .comment {
-  padding-left: 10px;
-  background-color: rgba(209,197,196,0.3);
-  border-left: 4px solid #d1c5c4;
-  color: #ae9896;
+  padding-left: 12px;
+
+  background-image: var(--comment-container-image);
+  background-repeat: no-repeat !important;
+
+  border-left: 5px solid #d1c5c4 !important;
+  border-left-width: thick !important;
+  border-radius: 4px !important;
+  color: var(--comment-container-text-color) !important;
 }
+/*借用tip*/
 .info {
-  padding-left: 10px;
-  background-color: rgba(52,152,219,0.3);
-  border-left: 4px solid #3498db;
-  color: #217bb8;
+  padding-left: 12px;
+  background-image: var(--tip-container-image);
+  background-repeat: no-repeat !important;
+
+  border-left: 5px solid #3498db !important;
+  border-left-width: thick !important;
+  border-radius: 4px !important;
+  color: var(--tip-container-text-color) !important;
 }
