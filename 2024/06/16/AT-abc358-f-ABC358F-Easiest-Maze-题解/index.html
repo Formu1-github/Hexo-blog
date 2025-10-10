@@ -1,0 +1,741 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/Hexo-blog/img/fluid.png">
+  <link rel="icon" href="/Hexo-blog/img/fluid.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Formu1">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="题意 给定一个 NNN 行 MMM 列的空白方格地图，你可以在相邻格子中适当放置墙壁，以组成一个迷宫。你需要求出是否存在从右上角到右下角，经过 KKK 个方格的无分支路径，如果存在，输出这个迷宫地图。 例如，以下就是一个在 N&#x3D;3N&#x3D;3N&#x3D;3 列 M&#x3D;3M&#x3D;3M&#x3D;3 行，经过 K&#x3D;7K&#x3D;7K&#x3D;7 个方格的无分支路径：  别问我为什么贴个样例在这。 思路&amp;做法 我们可以把“在格子边插墙”转化">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AT_abc358_f [ABC358F] Easiest Maze 题解">
+<meta property="og:url" content="https://formu1-github.github.io/Hexo-blog/2024/06/16/AT-abc358-f-ABC358F-Easiest-Maze-%E9%A2%98%E8%A7%A3/index.html">
+<meta property="og:site_name" content="Formu1">
+<meta property="og:description" content="题意 给定一个 NNN 行 MMM 列的空白方格地图，你可以在相邻格子中适当放置墙壁，以组成一个迷宫。你需要求出是否存在从右上角到右下角，经过 KKK 个方格的无分支路径，如果存在，输出这个迷宫地图。 例如，以下就是一个在 N&#x3D;3N&#x3D;3N&#x3D;3 列 M&#x3D;3M&#x3D;3M&#x3D;3 行，经过 K&#x3D;7K&#x3D;7K&#x3D;7 个方格的无分支路径：  别问我为什么贴个样例在这。 思路&amp;做法 我们可以把“在格子边插墙”转化">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://formu1-github.github.io/Hexo-blog/2024/06/16/AT-abc358-f-ABC358F-Easiest-Maze-%E9%A2%98%E8%A7%A3/yangli.png">
+<meta property="og:image" content="https://formu1-github.github.io/Hexo-blog/2024/06/16/AT-abc358-f-ABC358F-Easiest-Maze-%E9%A2%98%E8%A7%A3/qipan.png">
+<meta property="og:image" content="https://cdn.luogu.com.cn/upload/image_hosting/urwa81y6.png">
+<meta property="og:image" content="https://cdn.luogu.com.cn/upload/image_hosting/qs4o2swo.png">
+<meta property="og:image" content="https://cdn.luogu.com.cn/upload/image_hosting/orriycho.png">
+<meta property="og:image" content="https://cdn.luogu.com.cn/upload/image_hosting/y2amh0f6.png">
+<meta property="og:image" content="https://cdn.luogu.com.cn/upload/image_hosting/hhqwhiuk.png">
+<meta property="article:published_time" content="2024-06-16T00:05:00.000Z">
+<meta property="article:modified_time" content="2025-10-10T04:03:36.859Z">
+<meta property="article:author" content="Formu1">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://formu1-github.github.io/Hexo-blog/2024/06/16/AT-abc358-f-ABC358F-Easiest-Maze-%E9%A2%98%E8%A7%A3/yangli.png">
+  
+  
+  
+  <title>AT_abc358_f [ABC358F] Easiest Maze 题解 - Formu1</title>
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/KaTeX/0.16.2/katex.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/Hexo-blog/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/Hexo-blog/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/Hexo-blog/css/highlight-dark.css" />
+  
+
+
+
+  
+<link rel="stylesheet" href="/Hexo-blog/css/containers.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"formu1-github.github.io","root":"/Hexo-blog/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/Hexo-blog/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/Hexo-blog/js/utils.js" ></script>
+  <script  src="/Hexo-blog/js/color-schema.js" ></script>
+  
+
+
+  
+  
+<meta name="generator" content="Hexo 8.0.0"></head>
+
+
+
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/Hexo-blog/">
+      <strong>Formu1&#39;s blog</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/Hexo-blog/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/Hexo-blog/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/Hexo-blog/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/Hexo-blog/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/Hexo-blog/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/Hexo-blog/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="AT_abc358_f [ABC358F] Easiest Maze 题解"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2024-06-16 08:05" pubdate>
+          2024年6月16日 早上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          1.7k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          14 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">AT_abc358_f [ABC358F] Easiest Maze 题解</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h3 id="题意">题意</h3>
+<p>给定一个 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span></span></span></span> 行 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi></mrow><annotation encoding="application/x-tex">M</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span></span></span></span> 列的空白方格地图，你可以在相邻格子中适当放置墙壁，以组成一个迷宫。你需要求出是否存在从右上角到右下角，经过 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>K</mi></mrow><annotation encoding="application/x-tex">K</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.07153em;">K</span></span></span></span> 个方格的<strong>无分支</strong>路径，如果存在，输出这个迷宫地图。</p>
+<p>例如，以下就是一个在 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>=</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">N=3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">3</span></span></span></span> 列 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi><mo>=</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">M=3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">3</span></span></span></span> 行，经过 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>K</mi><mo>=</mo><mn>7</mn></mrow><annotation encoding="application/x-tex">K=7</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.07153em;">K</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">7</span></span></span></span> 个方格的<strong>无分支</strong>路径：</p>
+<p><img src="yangli.png" srcset="/Hexo-blog/img/loading.gif" lazyload alt="" width="159" height="156"></p>
+<p><s>别问我为什么贴个样例在这。</s></p>
+<h3 id="思路-做法">思路&amp;做法</h3>
+<p><strong>我们可以把“在格子边插墙”转化为“寻找路径，再沿路径边缘插墙”</strong>，这样就只需要求出路径即可。</p>
+<p>容易得出，该程序有以下几个步骤：</p>
+<ol>
+<li class="lvl-3">
+<p>判断是否存在路径。</p>
+</li>
+<li class="lvl-3">
+<p>存在，则计算路径。</p>
+</li>
+<li class="lvl-3">
+<p>按题目方式输出。</p>
+</li>
+</ol>
+<h4 id="判断是否存在路径">判断是否存在路径</h4>
+<p>若存在从右上角到右下角的路径，应满足以下条件：</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>K</mi><mo>≥</mo><mi>N</mi></mrow><annotation encoding="application/x-tex">K \geq N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8193em;vertical-align:-0.136em;"></span><span class="mord mathnormal" style="margin-right:0.07153em;">K</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≥</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span></span></span></span></p>
+</li>
+<li class="lvl-2">
+<p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>K</mi><mo>≤</mo><mi>N</mi><mo>⋅</mo><mi>M</mi></mrow><annotation encoding="application/x-tex">K \leq N \cdot M</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8193em;vertical-align:-0.136em;"></span><span class="mord mathnormal" style="margin-right:0.07153em;">K</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span></span></span></span></p>
+</li>
+<li class="lvl-2">
+<p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>K</mi><mo>≡</mo><mi>N</mi><mspace></mspace><mspace width="0.4444em"/><mo stretchy="false">(</mo><mrow><mi mathvariant="normal">m</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">d</mi></mrow><mspace width="0.3333em"/><mn>2</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">K \equiv N \pmod 2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.07153em;">K</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≡</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mspace allowbreak"></span><span class="mspace" style="margin-right:0.4444em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord"><span class="mord"><span class="mord mathrm">mod</span></span></span><span class="mspace" style="margin-right:0.3333em;"></span><span class="mord">2</span><span class="mclose">)</span></span></span></span></p>
+</li>
+</ul>
+<p>对于第一和第二个条件，是显而易见的。（<s>你都不够格子贴边走，或者塞都塞不下，怎么能行</s>）</p>
+<p>而对于第三个，我们可以用棋盘染色来证明：</p>
+<p><img src="qipan.png" srcset="/Hexo-blog/img/loading.gif" lazyload alt="" width="204" height="190"></p>
+<p>容易看出，每走一个格子，颜色就会切换。</p>
+<p>如果一个路线是可行的，它最终到达的位置应该与原路线（从起点一路向下到终点）一致。（<s>废话</s>）</p>
+<p>也就是说，它终点的颜色应该与原路线终点的颜色一致。</p>
+<p>所以只有在每次增加 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn></mrow><annotation encoding="application/x-tex">2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">2</span></span></span></span> 格的情况下，即该路线多经过了一个“黑白矩阵”，然后又回到原路线的黑白排列，该路线才可行。</p>
+<h4 id="计算路径">计算路径</h4>
+<blockquote>
+<p><s>不要管他那构式输出，自己建一个不香吗。</s></p>
+</blockquote>
+<p>我们可以按 <code>_map[x][y]=L R U D</code> 的方式建图，建完后再考虑放墙。</p>
+<p>在满足条件，每次增加两个格子的情况下，容易得出，我们需要往原线路左侧部分<strong>扩展</strong> <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn></mrow><annotation encoding="application/x-tex">2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">2</span></span></span></span> 的若干倍个格子。</p>
+<hr>
+<p>那么怎么扩展呢？<s>Mindustry 启动！</s></p>
+<p><img src="https://cdn.luogu.com.cn/upload/image_hosting/urwa81y6.png" srcset="/Hexo-blog/img/loading.gif" lazyload alt=""></p>
+<p>这是一个 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>5</mn><mo>×</mo><mn>10</mn></mrow><annotation encoding="application/x-tex">5 \times 10</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">5</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">10</span></span></span></span> 的迷宫，我们可以在第 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span>、<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn></mrow><annotation encoding="application/x-tex">2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">2</span></span></span></span> 行“兜弯”，如下图：</p>
+<p><img src="https://cdn.luogu.com.cn/upload/image_hosting/qs4o2swo.png" srcset="/Hexo-blog/img/loading.gif" lazyload alt=""></p>
+<p>我们需要两行一起处理，并在在适当时候调整方向，形成闭合路段。</p>
+<p>兜到下面，有可能会出现这种情况：</p>
+<p><img src="https://cdn.luogu.com.cn/upload/image_hosting/orriycho.png" srcset="/Hexo-blog/img/loading.gif" lazyload alt=""></p>
+<p>欸不是怎么没地方了，没关系我们可以在最后一行做文章</p>
+<p><img src="https://cdn.luogu.com.cn/upload/image_hosting/y2amh0f6.png" srcset="/Hexo-blog/img/loading.gif" lazyload alt=""></p>
+<p>如图，每次再扩展 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn></mrow><annotation encoding="application/x-tex">2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">2</span></span></span></span> 格，就可以适应所有情况。</p>
+<p>这就是基本的思想。因为 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>K</mi><mo>≤</mo><mi>N</mi><mo>⋅</mo><mi>M</mi></mrow><annotation encoding="application/x-tex">K \leq N \cdot M</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8193em;vertical-align:-0.136em;"></span><span class="mord mathnormal" style="margin-right:0.07153em;">K</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span></span></span></span>，所以直接循环 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>K</mi></mrow><annotation encoding="application/x-tex">K</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.07153em;">K</span></span></span></span> 次即可。</p>
+<hr>
+<p>此段代码：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-comment">//先将地图右侧原路径设为向下</span><br><span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">1</span>;i&lt;=n;++i)&#123;<br>	_map[i][m]=D;<br>&#125;<br><br><span class="hljs-type">int</span> x=<span class="hljs-number">-1</span>,y=<span class="hljs-number">0</span>;<span class="hljs-comment">//初始坐标，进入循环后立即修正</span><br><span class="hljs-type">int</span> i=<span class="hljs-number">1</span>;<span class="hljs-comment">//i表示当前是第几轮添加转弯的</span><br><span class="hljs-keyword">for</span>(;i&lt;=(k-n)/<span class="hljs-number">2</span>;++i)&#123;<span class="hljs-comment">//总共有(k-n)/2个需要添加</span><br>    <span class="hljs-keyword">if</span>(y&lt;<span class="hljs-number">1</span>)&#123;<span class="hljs-comment">//本行已满</span><br>        x+=<span class="hljs-number">2</span>;<br>        y=m<span class="hljs-number">-1</span>;<br>        <span class="hljs-keyword">if</span>(x<span class="hljs-number">+1</span>&gt;n) <span class="hljs-keyword">break</span>;<span class="hljs-comment">//如果现在只有最后一行有空位，另外计算</span><br>        _map[x][y<span class="hljs-number">+1</span>]=L;<span class="hljs-comment">//往左扭，以添加转弯</span><br>        <span class="hljs-comment">//_map[x+1][y+1]=D;</span><br>        <span class="hljs-comment">//这句是废话，上面已经初始化了</span><br>    &#125;<br>    _map[x][y]=(y==<span class="hljs-number">1</span>)?(D):(L);<span class="hljs-comment">//往左扭</span><br>    <span class="hljs-comment">//如果说本行已满，那么形成闭合路段</span><br>    _map[x<span class="hljs-number">+1</span>][y]=R;<span class="hljs-comment">//往右扭</span><br>    y-=<span class="hljs-number">1</span>;<span class="hljs-comment">//继续添加</span><br>&#125;<br><span class="hljs-keyword">if</span>(x!=<span class="hljs-number">-1</span>) _map[x][y<span class="hljs-number">+1</span>]=D;<span class="hljs-comment">//形成闭合路段，避免越界</span><br><span class="hljs-keyword">if</span>(i&lt;=(k-n)/<span class="hljs-number">2</span>)&#123;<span class="hljs-comment">//只有最后一行空位</span><br>    x=n,y=<span class="hljs-number">1</span>;<br>    <span class="hljs-keyword">for</span>(;i&lt;=(k-n)/<span class="hljs-number">2</span>;++i)&#123;<br>        _map[x<span class="hljs-number">-1</span>][y]=D;<br>        _map[x][y]=R;<br>        _map[x][y<span class="hljs-number">+1</span>]=U;<br>        y+=<span class="hljs-number">2</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>此段代码运行过程：（<s>应该没问题吧</s>）</p>
+<p><img src="https://cdn.luogu.com.cn/upload/image_hosting/hhqwhiuk.png" srcset="/Hexo-blog/img/loading.gif" lazyload alt=""></p>
+<h4 id="输出">输出</h4>
+<p><s>这下不得不管了。</s></p>
+<p>输出方式：</p>
+<p>上图中墙壁用 <code>+</code> 代替，方格用 <code>o</code> 代替。起点，终点用 <code>S</code> 和 <code>G</code>。如果说两个方格之间有路线连接，就用 <code>.</code> 表示（即平地）。没有路线连接，也就是原文的“墙”，就用 <code>|</code> 或 <code>-</code> 表示（当然，如果是上下无连接，是 <code>-</code>，另一种就是 <code>|</code>）。</p>
+<p>样例 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span> 即是上图第 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>4</mn></mrow><annotation encoding="application/x-tex">4</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">4</span></span></span></span> 步，可以对着参照一下。</p>
+<hr>
+<p>那么，怎么输出呢？</p>
+<p>显而易见，输出第一行，是 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi>M</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">2M-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7667em;vertical-align:-0.0833em;"></span><span class="mord">2</span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span> 个 <code>+</code>、<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span> 个 <code>S</code>、<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span> 个 <code>+</code> 连接起来的。最后一行同理，把 <code>S</code> 替换成 <code>G</code> 即可。</p>
+<p>而对于中间部分，先输出 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span> 个 <code>+</code>，然后分两种情况处理：</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>方格行：<code>o</code>、<code>|</code> 或 <code>.</code> 交叉排列。对于夹在两个 <code>o</code> 之间的 <code>|</code> 或 <code>.</code>，看左边、右边的方格是否有一个指向它，然后二选一。</p>
+</li>
+<li class="lvl-2">
+<p>墙壁行：<code>-</code> 或 <code>.</code>、<code>+</code> 交叉排列。对于夹在两个 <code>+</code> 之间的 <code>-</code> 或 <code>.</code>，看上边、下边的方格是否有一个指向它，然后二选一。</p>
+</li>
+</ul>
+<p>判断这两种情况、交叉排列只需要 mod 一下即可。</p>
+<p>输出看完整代码解释。</p>
+<p>至此，这道题就做完了。</p>
+<h4 id="几个小细节">几个小细节</h4>
+<ol>
+<li class="lvl-3">
+<p><code>L R U D</code> 的表示不要牵扯到 <code>0</code>，这会造成支路。</p>
+</li>
+<li class="lvl-3">
+<p>记得将 <code>if(x!=-1) _map[x][y+1]=D;</code> 加上，也就是将没有闭合的地方调整好。</p>
+</li>
+<li class="lvl-3">
+<p>小心越界与 <code>x</code>、<code>y</code>、<code>i</code>、<code>j</code> 的处理。</p>
+</li>
+</ol>
+<h3 id="完整代码">完整代码</h3>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> L 1</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> R 2</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> U 3</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> D 4</span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-type">const</span> <span class="hljs-type">int</span> maxn=<span class="hljs-number">105</span>;<br><span class="hljs-type">int</span> n,m,k;<br><span class="hljs-type">int</span> _map[maxn][maxn];<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">output</span><span class="hljs-params">()</span></span>&#123;<br>	<span class="hljs-comment">//开头第一行</span><br>	<span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">1</span>;i&lt;=<span class="hljs-number">2</span>*m<span class="hljs-number">-1</span>;++i) <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;+&quot;</span>);<br>	<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;S+\n&quot;</span>);<br>	<span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">1</span>;i&lt;<span class="hljs-number">2</span>*n;++i)&#123;<br>		<span class="hljs-keyword">if</span>(i%<span class="hljs-number">2</span>==<span class="hljs-number">1</span>)&#123;<span class="hljs-comment">//方格行</span><br>			<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;+&quot;</span>);<span class="hljs-comment">//当头一棒</span><br>			<span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> j=<span class="hljs-number">1</span>;j&lt;<span class="hljs-number">2</span>*m;++j)&#123;<br>				<span class="hljs-keyword">if</span>(j%<span class="hljs-number">2</span>==<span class="hljs-number">1</span>) <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;o&quot;</span>);<span class="hljs-comment">//方格</span><br>				<span class="hljs-keyword">else</span>&#123;<br>					<span class="hljs-keyword">if</span>(_map[(i<span class="hljs-number">+1</span>)/<span class="hljs-number">2</span>][j/<span class="hljs-number">2</span>]==R||_map[(i<span class="hljs-number">+1</span>)/<span class="hljs-number">2</span>][j/<span class="hljs-number">2</span><span class="hljs-number">+1</span>]==L) <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;.&quot;</span>);<br>					<span class="hljs-keyword">else</span> <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;|&quot;</span>);<br>					<span class="hljs-comment">//如果有连接，即为平地，否则即为墙壁</span><br>				&#125;<br>			&#125;<br>			<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;+\n&quot;</span>);<span class="hljs-comment">//致命一击</span><br>		&#125;<br>		<span class="hljs-keyword">else</span>&#123;<span class="hljs-comment">//墙壁行，同上</span><br>			<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;+&quot;</span>);<br>			<span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> j=<span class="hljs-number">1</span>;j&lt;=<span class="hljs-number">2</span>*m;++j)&#123;<br>				<span class="hljs-keyword">if</span>(j%<span class="hljs-number">2</span>==<span class="hljs-number">1</span>)&#123;<br>					<span class="hljs-keyword">if</span>(_map[i/<span class="hljs-number">2</span>][(j<span class="hljs-number">+1</span>)/<span class="hljs-number">2</span>]==D||_map[i/<span class="hljs-number">2</span><span class="hljs-number">+1</span>][(j<span class="hljs-number">+1</span>)/<span class="hljs-number">2</span>]==U) <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;.&quot;</span>);<br>					<span class="hljs-keyword">else</span> <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;-&quot;</span>);<br>				&#125;<br>				<span class="hljs-keyword">else</span> <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;+&quot;</span>);<span class="hljs-comment">//因为墙壁行最后的加号与中间部分一致，所以不用特判</span><br>			&#125;<br>			<span class="hljs-built_in">puts</span>(<span class="hljs-string">&quot;&quot;</span>);<br>		&#125;<br>	&#125;<br>	<span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">1</span>;i&lt;=<span class="hljs-number">2</span>*m<span class="hljs-number">-1</span>;++i) <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;+&quot;</span>);<br>	<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;G+\n&quot;</span>);<br>&#125;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>	<span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%d%d%d&quot;</span>,&amp;n,&amp;m,&amp;k);<br>	<span class="hljs-keyword">if</span>(<span class="hljs-built_in">k</span>&lt;n||k&gt;(n*m)||(k-n)%<span class="hljs-number">2</span>!=<span class="hljs-number">0</span>)&#123;<br>		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;No\n&quot;</span>);<br>		<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>	&#125;<br>	<span class="hljs-keyword">else</span> <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;Yes\n&quot;</span>);<br>	<br>	<span class="hljs-comment">//下面不再赘述</span><br>	<span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">1</span>;i&lt;=n;++i)&#123;<br>		_map[i][m]=D;<br>	&#125;<br>	<span class="hljs-type">int</span> x=<span class="hljs-number">-1</span>,y=<span class="hljs-number">0</span>;<br>	<span class="hljs-type">int</span> i=<span class="hljs-number">1</span>;<br>	<span class="hljs-keyword">for</span>(;i&lt;=(k-n)/<span class="hljs-number">2</span>;++i)&#123;<br>		<span class="hljs-keyword">if</span>(y&lt;<span class="hljs-number">1</span>)&#123;<br>			x+=<span class="hljs-number">2</span>;<br>			y=m<span class="hljs-number">-1</span>;<br>			<span class="hljs-keyword">if</span>(x<span class="hljs-number">+1</span>&gt;n) <span class="hljs-keyword">break</span>;<br>			_map[x][y<span class="hljs-number">+1</span>]=L;<br>			_map[x<span class="hljs-number">+1</span>][y<span class="hljs-number">+1</span>]=D;<br>		&#125;<br>		_map[x][y]=(y==<span class="hljs-number">1</span>)?(D):(L);<br>		_map[x<span class="hljs-number">+1</span>][y]=R;<br>		y-=<span class="hljs-number">1</span>;<br>	&#125;<br>	<span class="hljs-keyword">if</span>(x!=<span class="hljs-number">-1</span>) _map[x][y<span class="hljs-number">+1</span>]=D;<br>	<span class="hljs-keyword">if</span>(i&lt;=(k-n)/<span class="hljs-number">2</span>)&#123;<br>		x=n,y=<span class="hljs-number">1</span>;<br>		<span class="hljs-keyword">for</span>(;i&lt;=(k-n)/<span class="hljs-number">2</span>;++i)&#123;<br>			_map[x<span class="hljs-number">-1</span>][y]=D;<br>			_map[x][y]=R;<br>			_map[x][y<span class="hljs-number">+1</span>]=U;<br>			y+=<span class="hljs-number">2</span>;<br>		&#125;<br>	&#125;<br>	<span class="hljs-built_in">output</span>();<br>	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>The end.</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>AT_abc358_f [ABC358F] Easiest Maze 题解</div>
+      <div>https://formu1-github.github.io/Hexo-blog/2024/06/16/AT-abc358-f-ABC358F-Easiest-Maze-题解/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Formu1</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2024年6月16日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/Hexo-blog/2025/10/03/hello-world/" title="Hello World">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Hello World</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/Hexo-blog/2023/11/05/SP9512-%E9%A2%98%E8%A7%A3/" title="SP9512 题解">
+                        <span class="hidden-mobile">SP9512 题解</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+  
+  
+
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/Hexo-blog/js/events.js" ></script>
+<script  src="/Hexo-blog/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/Hexo-blog/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/Hexo-blog/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/Hexo-blog/js/boot.js" ></script>
+
+
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
