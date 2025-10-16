@@ -19,16 +19,16 @@
   <meta name="author" content="Formu1">
   <meta name="keywords" content="">
   
-    <meta name="description" content="原 Alice 和 Bob 玩 nnn 回合游戏，初始 x&#x3D;0x&#x3D;0x&#x3D;0。 每回合规则：   Alice 选择实数 t∈[0,k]t\in [0,k]t∈[0,k]。   Bob 选择 x←x+tx\leftarrow x+tx←x+t 或 x←x−tx\leftarrow x−tx←x−t。   在整个 nnn 回合中，Bob 必须至少选择 mmm 次 x+tx+tx+t。   Alice 希">
+    <meta name="description" content="原题 本题为原比赛T2 Alice 和 Bob 玩 nnn 回合游戏，初始 x&#x3D;0x&#x3D;0x&#x3D;0。 每回合规则：   Alice 选择实数 t∈[0,k]t\in [0,k]t∈[0,k]。   Bob 选择 x←x+tx\leftarrow x+tx←x+t 或 x←x−tx\leftarrow x−tx←x−t。   在整个 nnn 回合中，Bob 必须至少选择 mmm 次 x+tx+tx+t。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CF1629F1-2 Game on Sum 题解">
 <meta property="og:url" content="https://formu1-github.github.io/Hexo-blog/2025/10/11/CF1629F1-2-Game-on-Sum-%E9%A2%98%E8%A7%A3/index.html">
 <meta property="og:site_name" content="Formu1">
-<meta property="og:description" content="原 Alice 和 Bob 玩 nnn 回合游戏，初始 x&#x3D;0x&#x3D;0x&#x3D;0。 每回合规则：   Alice 选择实数 t∈[0,k]t\in [0,k]t∈[0,k]。   Bob 选择 x←x+tx\leftarrow x+tx←x+t 或 x←x−tx\leftarrow x−tx←x−t。   在整个 nnn 回合中，Bob 必须至少选择 mmm 次 x+tx+tx+t。   Alice 希">
+<meta property="og:description" content="原题 本题为原比赛T2 Alice 和 Bob 玩 nnn 回合游戏，初始 x&#x3D;0x&#x3D;0x&#x3D;0。 每回合规则：   Alice 选择实数 t∈[0,k]t\in [0,k]t∈[0,k]。   Bob 选择 x←x+tx\leftarrow x+tx←x+t 或 x←x−tx\leftarrow x−tx←x−t。   在整个 nnn 回合中，Bob 必须至少选择 mmm 次 x+tx+tx+t。">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://formu1-github.github.io/Hexo-blog/2025/10/11/CF1629F1-2-Game-on-Sum-%E9%A2%98%E8%A7%A3/1.png">
 <meta property="article:published_time" content="2025-10-11T07:11:31.000Z">
-<meta property="article:modified_time" content="2025-10-16T02:57:50.892Z">
+<meta property="article:modified_time" content="2025-10-16T06:54:27.717Z">
 <meta property="article:author" content="Formu1">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://formu1-github.github.io/Hexo-blog/2025/10/11/CF1629F1-2-Game-on-Sum-%E9%A2%98%E8%A7%A3/1.png">
@@ -296,7 +296,7 @@
         aria-expanded="true"
       >
         2025sm模拟赛
-        <span class="list-group-count">(4)</span>
+        <span class="list-group-count">(5)</span>
         <i class="iconfont icon-arrowright"></i>
       </a>
       
@@ -360,7 +360,7 @@
         aria-expanded="false"
       >
         17
-        <span class="list-group-count">(1)</span>
+        <span class="list-group-count">(2)</span>
         <i class="iconfont icon-arrowright"></i>
       </a>
       
@@ -371,6 +371,15 @@
           
   <div class="category-post-list">
     
+    
+      
+      
+        <a href="/Hexo-blog/2025/10/16/AtCoder-code-festival-2017-qualb-f-Largest-Smallest-Cyclic-Shift-%E9%A2%98%E8%A7%A3/" title="AtCoder - code_festival_2017_qualb_f  Largest Smallest Cyclic Shift 题解"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">AtCoder - code_festival_2017_qualb_f  Largest Smallest Cyclic Shift 题解</span>
+        </a>
+      
     
       
       
@@ -454,7 +463,7 @@
             
               <div class="markdown-body">
                 
-                <p><a target="_blank" rel="noopener" href="https://codeforces.com/problemset/problem/1629/F2">原</a></p>
+                <p><a target="_blank" rel="noopener" href="https://codeforces.com/problemset/problem/1629/F2">原题</a> 本题为原比赛T2</p>
 <p>Alice 和 Bob 玩 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">n</span></span></span></span> 回合游戏，初始 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">x=0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">x</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">0</span></span></span></span>。</p>
 <p>每回合规则：</p>
 <ol>

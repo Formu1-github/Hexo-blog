@@ -19,15 +19,15 @@
   <meta name="author" content="Formu1">
   <meta name="keywords" content="">
   
-    <meta name="description" content="link ⑨ 有一个 DAG，它有 nnn 个节点和 mmm 条边。该图恰好有一个节点没有出边。第 iii 个节点上有一个整数 aia_iai​。 每秒钟发生以下情况：   设 SSS 为有 ax&gt;0a_x&gt;0ax​&gt;0 的节点集合 xxx。   对于所有 x∈Sx\in Sx∈S，从 axa_xax​ 中减去 111，然后对于每个节点 yyy，如果存在从 xxx 到 yyy 的">
+    <meta name="description" content="link 本题为原T2 ⑨ 有一个 DAG，它有 nnn 个节点和 mmm 条边。该图恰好有一个节点没有出边。第 iii 个节点上有一个整数 aia_iai​。 每秒钟发生以下情况：   设 SSS 为有 ax&gt;0a_x&gt;0ax​&gt;0 的节点集合 xxx。   对于所有 x∈Sx\in Sx∈S，从 axa_xax​ 中减去 111，然后对于每个节点 yyy，如果存在从 xxx">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CF1704E Count Seconds 题解">
 <meta property="og:url" content="https://formu1-github.github.io/Hexo-blog/2025/10/16/CF1704E-Count-Seconds-%E9%A2%98%E8%A7%A3/index.html">
 <meta property="og:site_name" content="Formu1">
-<meta property="og:description" content="link ⑨ 有一个 DAG，它有 nnn 个节点和 mmm 条边。该图恰好有一个节点没有出边。第 iii 个节点上有一个整数 aia_iai​。 每秒钟发生以下情况：   设 SSS 为有 ax&gt;0a_x&gt;0ax​&gt;0 的节点集合 xxx。   对于所有 x∈Sx\in Sx∈S，从 axa_xax​ 中减去 111，然后对于每个节点 yyy，如果存在从 xxx 到 yyy 的">
+<meta property="og:description" content="link 本题为原T2 ⑨ 有一个 DAG，它有 nnn 个节点和 mmm 条边。该图恰好有一个节点没有出边。第 iii 个节点上有一个整数 aia_iai​。 每秒钟发生以下情况：   设 SSS 为有 ax&gt;0a_x&gt;0ax​&gt;0 的节点集合 xxx。   对于所有 x∈Sx\in Sx∈S，从 axa_xax​ 中减去 111，然后对于每个节点 yyy，如果存在从 xxx">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-10-16T03:24:28.000Z">
-<meta property="article:modified_time" content="2025-10-16T04:19:00.124Z">
+<meta property="article:modified_time" content="2025-10-16T06:55:15.215Z">
 <meta property="article:author" content="Formu1">
 <meta name="twitter:card" content="summary_large_image">
   
@@ -233,7 +233,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          915 字
+          919 字
         
       </span>
     
@@ -294,7 +294,7 @@
         aria-expanded="true"
       >
         2025sm模拟赛
-        <span class="list-group-count">(4)</span>
+        <span class="list-group-count">(5)</span>
         <i class="iconfont icon-arrowright"></i>
       </a>
       
@@ -358,7 +358,7 @@
         aria-expanded="true"
       >
         17
-        <span class="list-group-count">(1)</span>
+        <span class="list-group-count">(2)</span>
         <i class="iconfont icon-arrowright"></i>
       </a>
       
@@ -369,6 +369,15 @@
           
   <div class="category-post-list">
     
+    
+      
+      
+        <a href="/Hexo-blog/2025/10/16/AtCoder-code-festival-2017-qualb-f-Largest-Smallest-Cyclic-Shift-%E9%A2%98%E8%A7%A3/" title="AtCoder - code_festival_2017_qualb_f  Largest Smallest Cyclic Shift 题解"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">AtCoder - code_festival_2017_qualb_f  Largest Smallest Cyclic Shift 题解</span>
+        </a>
+      
     
       
       
@@ -452,7 +461,7 @@
             
               <div class="markdown-body">
                 
-                <p><a target="_blank" rel="noopener" href="https://codeforces.com/contest/1704/problem/E">link</a></p>
+                <p><a target="_blank" rel="noopener" href="https://codeforces.com/contest/1704/problem/E">link</a> 本题为原T2</p>
 <p>⑨ 有一个 DAG，它有 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">n</span></span></span></span> 个节点和 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi></mrow><annotation encoding="application/x-tex">m</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">m</span></span></span></span> 条边。该图恰好有一个节点没有出边。第 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6595em;"></span><span class="mord mathnormal">i</span></span></span></span> 个节点上有一个整数 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">a_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5806em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>。</p>
 <p>每秒钟发生以下情况：</p>
 <ul class="lvl-0">
@@ -573,6 +582,12 @@
                 <div class="post-prevnext my-3">
                   <article class="post-prev col-6">
                     
+                    
+                      <a href="/Hexo-blog/2025/10/16/AtCoder-code-festival-2017-qualb-f-Largest-Smallest-Cyclic-Shift-%E9%A2%98%E8%A7%A3/" title="AtCoder - code_festival_2017_qualb_f  Largest Smallest Cyclic Shift 题解">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">AtCoder - code_festival_2017_qualb_f  Largest Smallest Cyclic Shift 题解</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
                     
                   </article>
                   <article class="post-next col-6">
