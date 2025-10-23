@@ -4,6 +4,27 @@
   
   
   <entry>
+    <title>CF1310D Tourism 题解</title>
+    <link href="/Hexo-blog/2025/10/23/CF1310D-Tourism-%E9%A2%98%E8%A7%A3/"/>
+    <url>/Hexo-blog/2025/10/23/CF1310D-Tourism-%E9%A2%98%E8%A7%A3/</url>
+    
+    <content type="html"><![CDATA[<p><a href="https://codeforces.com/problemset/problem/1310/D">link</a> T2 desu</p><p>懒得写，贴别人的算了。</p><ul class="lvl-0"><li class="lvl-2"><p>随机化：<a href="https://www.luogu.com.cn/article/4x00oxfe">link</a> <a href="https://codeforces.com/contest/1310/submission/345113012">sub</a></p></li><li class="lvl-2"><p>确定性（类折半搜索）：<a href="https://www.luogu.com.cn/article/nmwruqph">link</a>，没写（）</p></li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>2025sm模拟赛</category>
+      
+      <category>25</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>P9464 [EGOI 2023] Padel Prize Pursuit / 追梦笼式网球 题解</title>
     <link href="/Hexo-blog/2025/10/23/P9464-EGOI-2023-Padel-Prize-Pursuit-%E8%BF%BD%E6%A2%A6%E7%AC%BC%E5%BC%8F%E7%BD%91%E7%90%83-%E9%A2%98%E8%A7%A3/"/>
     <url>/Hexo-blog/2025/10/23/P9464-EGOI-2023-Padel-Prize-Pursuit-%E8%BF%BD%E6%A2%A6%E7%AC%BC%E5%BC%8F%E7%BD%91%E7%90%83-%E9%A2%98%E8%A7%A3/</url>

@@ -19,21 +19,21 @@
   <meta name="author" content="Formu1">
   <meta name="keywords" content="">
   
-    <meta name="description" content="link 本题为原T1 黑板上有 2n2n2n 个整数。 每轮：   Alice 选一个数 xxx 擦掉；   Bob 选一个数 yyy 擦掉；   将 x⊕yx \oplus yx⊕y 记在笔记本上。（是另一个地方！）   重复 nnn 轮，笔记本上有 nnn 个数，分数是它们的最大值。 Alice 想最大化分数，Bob 想最小化分数。双方最优策略下，求分数。 1≤n≤2×105,0≤Ai≤23">
+    <meta name="description" content="link T2 desu 懒得写，贴别人的算了。   随机化：link sub   确定性（类折半搜索）：link，没写（）">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ARC122D XOR Game 题解">
-<meta property="og:url" content="https://formu1-github.github.io/Hexo-blog/2025/10/20/ARC122D-XOR-Game-%E9%A2%98%E8%A7%A3/index.html">
+<meta property="og:title" content="CF1310D Tourism 题解">
+<meta property="og:url" content="https://formu1-github.github.io/Hexo-blog/2025/10/23/CF1310D-Tourism-%E9%A2%98%E8%A7%A3/index.html">
 <meta property="og:site_name" content="Formu1">
-<meta property="og:description" content="link 本题为原T1 黑板上有 2n2n2n 个整数。 每轮：   Alice 选一个数 xxx 擦掉；   Bob 选一个数 yyy 擦掉；   将 x⊕yx \oplus yx⊕y 记在笔记本上。（是另一个地方！）   重复 nnn 轮，笔记本上有 nnn 个数，分数是它们的最大值。 Alice 想最大化分数，Bob 想最小化分数。双方最优策略下，求分数。 1≤n≤2×105,0≤Ai≤23">
+<meta property="og:description" content="link T2 desu 懒得写，贴别人的算了。   随机化：link sub   确定性（类折半搜索）：link，没写（）">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2025-10-20T11:47:35.000Z">
-<meta property="article:modified_time" content="2025-10-20T13:30:19.019Z">
+<meta property="article:published_time" content="2025-10-23T13:53:55.000Z">
+<meta property="article:modified_time" content="2025-10-23T13:57:31.217Z">
 <meta property="article:author" content="Formu1">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>ARC122D XOR Game 题解 - Formu1</title>
+  <title>CF1310D Tourism 题解 - Formu1</title>
 
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
@@ -211,7 +211,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="ARC122D XOR Game 题解"></span>
+            <span id="subtitle" data-typed-text="CF1310D Tourism 题解"></span>
           
         </div>
 
@@ -222,8 +222,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-10-20 19:47" pubdate>
-          2025年10月20日 晚上
+        <time datetime="2025-10-23 21:53" pubdate>
+          2025年10月23日 晚上
         </time>
       </span>
     
@@ -234,7 +234,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          886 字
+          25 字
         
       </span>
     
@@ -245,7 +245,7 @@
         
         
         
-          8 分钟
+          1 分钟
         
       </span>
     
@@ -454,17 +454,17 @@
     
     
     <div class="category-sub row nomargin-x">
-      <a class="category-subitem 
+      <a class="category-subitem collapsed
           list-group-item category-item-action col-10 col-md-11 col-xm-11" title="20"
         id="heading-98f13708210194c475687be6106a3b84" role="tab" data-toggle="collapse" href="#collapse-98f13708210194c475687be6106a3b84"
-        aria-expanded="true"
+        aria-expanded="false"
       >
         20
         <span class="list-group-count">(1)</span>
         <i class="iconfont icon-arrowright"></i>
       </a>
       
-      <div class="category-collapse collapse show" id="collapse-98f13708210194c475687be6106a3b84"
+      <div class="category-collapse collapse " id="collapse-98f13708210194c475687be6106a3b84"
            role="tabpanel" aria-labelledby="heading-98f13708210194c475687be6106a3b84">
         
         
@@ -476,7 +476,7 @@
       
         <a href="/Hexo-blog/2025/10/20/ARC122D-XOR-Game-%E9%A2%98%E8%A7%A3/" title="ARC122D XOR Game 题解"
            class="list-group-item list-group-item-action
-           active">
+           ">
           <span class="category-post">ARC122D XOR Game 题解</span>
         </a>
       
@@ -693,17 +693,17 @@
     
     
     <div class="category-sub row nomargin-x">
-      <a class="category-subitem collapsed
+      <a class="category-subitem 
           list-group-item category-item-action col-10 col-md-11 col-xm-11" title="25"
         id="heading-8e296a067a37563370ded05f5a3bf3ec" role="tab" data-toggle="collapse" href="#collapse-8e296a067a37563370ded05f5a3bf3ec"
-        aria-expanded="false"
+        aria-expanded="true"
       >
         25
         <span class="list-group-count">(2)</span>
         <i class="iconfont icon-arrowright"></i>
       </a>
       
-      <div class="category-collapse collapse " id="collapse-8e296a067a37563370ded05f5a3bf3ec"
+      <div class="category-collapse collapse show" id="collapse-8e296a067a37563370ded05f5a3bf3ec"
            role="tabpanel" aria-labelledby="heading-8e296a067a37563370ded05f5a3bf3ec">
         
         
@@ -715,7 +715,7 @@
       
         <a href="/Hexo-blog/2025/10/23/CF1310D-Tourism-%E9%A2%98%E8%A7%A3/" title="CF1310D Tourism 题解"
            class="list-group-item list-group-item-action
-           ">
+           active">
           <span class="category-post">CF1310D Tourism 题解</span>
         </a>
       
@@ -797,47 +797,21 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">ARC122D XOR Game 题解</h1>
+            <h1 id="seo-header">CF1310D Tourism 题解</h1>
             
             
               <div class="markdown-body">
                 
-                <p><a target="_blank" rel="noopener" href="https://atcoder.jp/contests/arc122/tasks/arc122_d">link</a> 本题为原T1</p>
-<p>黑板上有 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi>n</mi></mrow><annotation encoding="application/x-tex">2n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">2</span><span class="mord mathnormal">n</span></span></span></span> 个整数。<br>
-每轮：</p>
-<ol>
-<li class="lvl-3">
-<p>Alice 选一个数 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">x</span></span></span></span> 擦掉；</p>
+                <p><a target="_blank" rel="noopener" href="https://codeforces.com/problemset/problem/1310/D">link</a> T2 desu</p>
+<p>懒得写，贴别人的算了。</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>随机化：<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/article/4x00oxfe">link</a> <a target="_blank" rel="noopener" href="https://codeforces.com/contest/1310/submission/345113012">sub</a></p>
 </li>
-<li class="lvl-3">
-<p>Bob 选一个数 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi></mrow><annotation encoding="application/x-tex">y</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span></span></span></span> 擦掉；</p>
+<li class="lvl-2">
+<p>确定性（类折半搜索）：<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/article/nmwruqph">link</a>，没写（）</p>
 </li>
-<li class="lvl-3">
-<p>将 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>⊕</mo><mi>y</mi></mrow><annotation encoding="application/x-tex">x \oplus y</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6667em;vertical-align:-0.0833em;"></span><span class="mord mathnormal">x</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">⊕</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span></span></span></span> 记在<strong>笔记本</strong>上。（是另一个地方！）</p>
-</li>
-</ol>
-<p>重复 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">n</span></span></span></span> 轮，笔记本上有 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">n</span></span></span></span> 个数，分数是它们的最大值。<br>
-Alice 想最大化分数，Bob 想最小化分数。双方最优策略下，求分数。</p>
-<p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>≤</mo><mi>n</mi><mo>≤</mo><mn>2</mn><mo>×</mo><msup><mn>10</mn><mn>5</mn></msup><mo separator="true">,</mo><mn>0</mn><mo>≤</mo><msub><mi>A</mi><mi>i</mi></msub><mo>≤</mo><msup><mn>2</mn><mn>30</mn></msup></mrow><annotation encoding="application/x-tex">1\leq n\leq 2\times10^5,0\leq A_i\leq 2^{30}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7804em;vertical-align:-0.136em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7719em;vertical-align:-0.136em;"></span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">2</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1.0085em;vertical-align:-0.1944em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">5</span></span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">0</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">A</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">30</span></span></span></span></span></span></span></span></span></span></span></span></p>
-<hr>
-<p>这道题其实不是博弈论。</p>
-<p>因为最后所有数都能一一配对。当 Alice 选择某一组的其中一个数时，Bob 一定可以选择对应的另外一个数。</p>
-<p>所以 Alice 怎么选根本不重要，Bob 占据绝对主动，<strong>一定可以最小化答案</strong>。</p>
-<p>（赛时居然只看出来了第一步 A 怎么选不重要，太菜了qaq）</p>
-<p>那么这道题的本质是：给你 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi>n</mi></mrow><annotation encoding="application/x-tex">2n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">2</span><span class="mord mathnormal">n</span></span></span></span> 个数，问你如何两两配对，使每组数的异或的最大值最小。</p>
-<p>异或这种东西吧，还是要按位考虑的。不要成天想着哪些位置反掉了，然后根据修改的更新。</p>
-<p>我们从高位到低位考虑贪心，尽量使高位为零。</p>
-<p>手玩可以发现，如果最高位所有的 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span> 都可以在一起消掉，那么就可以使这些 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span> 以特定的方式相消使得这一位结果为 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">0</span></span></span></span>。</p>
-<p>也就是说，如果 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span> 的数量为偶数，就可以让下一位变为“最高位”了，即递归下去。</p>
-<p>当然这里递归下去是要分为这一位是 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">0</span></span></span></span> 和 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span> 两个集合递归。毕竟 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span> 是只能与 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span> 消的。</p>
-<p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mstyle mathcolor="transparent"><mstyle mathsize="0.5em"><mo>−</mo></mstyle></mstyle></mrow><annotation encoding="application/x-tex">\color{transparent}\tiny -</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.3333em;vertical-align:-0.0417em;"></span><span class="mord sizing reset-size6 size1" style="color:transparent;">−</span></span></span></span></p>
-<p>那么如果 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span> 的数量为奇数，就必然有一个 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span> 无法找 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span> 相消，它就使得结果在这一位上为 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span>。</p>
-<p>由于其他 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span> 都能消掉，在这一位上为 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">0</span></span></span></span>，那么说，实际上其他 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span> 是对结果没有影响的。直接以上面那玩意为结果就可以了。</p>
-<p>考虑如何求出 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">0</span></span></span></span> 的集合与 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span> 的集合相消的最小值。使用字典树即可。</p>
-<p>那么这一位由于已经是最大值，就不用递归下去了。</p>
-<p>最后答案取 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>max</mi><mo>⁡</mo></mrow><annotation encoding="application/x-tex">\max</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mop">max</span></span></span></span> 即可。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-type">int</span> n;<br>ll a[maxn];<br>bitset&lt;maxm&gt; b[maxn];<br>vector&lt;<span class="hljs-type">int</span>&gt; fullset;<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">input</span><span class="hljs-params">()</span></span>&#123;<br>	n=<span class="hljs-built_in">read</span>();<br>	<span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">1</span>;i&lt;=<span class="hljs-number">2</span>*n;++i)&#123;<br>		a[i]=<span class="hljs-built_in">read</span>();<br>		b[i]=a[i];<br>		fullset.<span class="hljs-built_in">emplace_back</span>(i);<br>		<span class="hljs-comment">// cout&lt;&lt;b[i]&lt;&lt;endl;</span><br>	&#125;<br>&#125;<br><br><span class="hljs-keyword">struct</span> <span class="hljs-title class_">Trie</span>&#123;<br>	<span class="hljs-keyword">struct</span> <span class="hljs-title class_">Node</span>&#123;<br>		<span class="hljs-type">int</span> son[<span class="hljs-number">2</span>];<br>		<span class="hljs-type">bool</span> isend;<br>		<span class="hljs-built_in">Node</span>()&#123;&#125;<br>		<span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">clear</span><span class="hljs-params">()</span></span>&#123;isend=<span class="hljs-number">0</span>;son[<span class="hljs-number">0</span>]=son[<span class="hljs-number">1</span>]=<span class="hljs-number">0</span>;&#125;<br>	&#125;t[maxn*maxm];<br>	<span class="hljs-type">int</span> idx;<br><br>	<span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">insert</span><span class="hljs-params">(bitset&lt;maxm&gt; &amp;s,<span class="hljs-type">int</span> l,<span class="hljs-type">int</span> r)</span></span>&#123;<br>		<span class="hljs-type">int</span> now=<span class="hljs-number">0</span>;<br>		<span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=l;i&gt;=r;--i)&#123;<br>			<span class="hljs-type">int</span> c=s[i];<br>			<span class="hljs-keyword">if</span>(t[now].son[c]==<span class="hljs-number">0</span>) t[now].son[c]=++idx;<br>			now=t[now].son[c];<br>		&#125;<br>		t[now].isend=<span class="hljs-number">1</span>;<br>	&#125;<br>	<span class="hljs-function">ll <span class="hljs-title">query</span><span class="hljs-params">(bitset&lt;maxm&gt; &amp;s,<span class="hljs-type">int</span> l,<span class="hljs-type">int</span> r)</span></span>&#123;<br>		<span class="hljs-type">int</span> now=<span class="hljs-number">0</span>;<br>		ll res=<span class="hljs-number">0</span>;<br>		<span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=l;i&gt;=r;--i)&#123;<br>			<span class="hljs-type">int</span> c=s[i];<br>			<span class="hljs-keyword">if</span>(t[now].son[c]==<span class="hljs-number">0</span>)&#123;<br>				now=t[now].son[c^<span class="hljs-number">1</span>];<br>				res+=_2[i-r];<br>			&#125;<br>			<span class="hljs-keyword">else</span> now=t[now].son[c];<br>		&#125;<br>		<span class="hljs-keyword">return</span> res;<br>	&#125;<br>	<span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">clear</span><span class="hljs-params">()</span></span>&#123;<br>		<span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;=idx;++i) t[i].<span class="hljs-built_in">clear</span>();<br>		idx=<span class="hljs-number">0</span>;<br>	&#125;<br>&#125;trie;<br><br>ll ans;<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">solve</span><span class="hljs-params">(vector&lt;<span class="hljs-type">int</span>&gt; &amp;s,<span class="hljs-type">int</span> dep)</span></span>&#123;<br>	<span class="hljs-keyword">if</span>(dep&lt;<span class="hljs-number">0</span>) <span class="hljs-keyword">return</span>;<br><br>	<span class="hljs-type">int</span> cnt=<span class="hljs-number">0</span>;<br>	<span class="hljs-keyword">for</span>(<span class="hljs-keyword">auto</span> p: s)&#123;<br>		<span class="hljs-keyword">if</span>(b[p][dep]==<span class="hljs-number">1</span>) ++cnt;<br>	&#125;<br>	<span class="hljs-keyword">if</span>(cnt%<span class="hljs-number">2</span>==<span class="hljs-number">0</span>)&#123;<br>		vector&lt;<span class="hljs-type">int</span>&gt; p1,p0;<br>		<span class="hljs-keyword">for</span>(<span class="hljs-keyword">auto</span> p: s)&#123;<br>			<span class="hljs-keyword">if</span>(b[p][dep]==<span class="hljs-number">1</span>) p<span class="hljs-number">1.</span><span class="hljs-built_in">emplace_back</span>(p);<br>			<span class="hljs-keyword">else</span> p<span class="hljs-number">0.</span><span class="hljs-built_in">emplace_back</span>(p);<br>		&#125;<br>		<span class="hljs-keyword">if</span>(p<span class="hljs-number">0.</span><span class="hljs-built_in">size</span>()) <span class="hljs-built_in">solve</span>(p0,dep<span class="hljs-number">-1</span>);<br>		<span class="hljs-keyword">if</span>(p<span class="hljs-number">1.</span><span class="hljs-built_in">size</span>()) <span class="hljs-built_in">solve</span>(p1,dep<span class="hljs-number">-1</span>);<br>	&#125;<br>	<span class="hljs-keyword">else</span>&#123;<br>		trie.<span class="hljs-built_in">clear</span>();<br>		<span class="hljs-keyword">for</span>(<span class="hljs-keyword">auto</span> p: s)&#123;<br>			<span class="hljs-keyword">if</span>(b[p][dep]==<span class="hljs-number">0</span>)&#123;<br>				trie.<span class="hljs-built_in">insert</span>(b[p],dep,<span class="hljs-number">0</span>);<br>			&#125;<br>		&#125;<br>		ll res=inf;<br>		<span class="hljs-keyword">for</span>(<span class="hljs-keyword">auto</span> p: s)&#123;<br>			<span class="hljs-keyword">if</span>(b[p][dep]==<span class="hljs-number">1</span>)&#123;<br>				res=<span class="hljs-built_in">min</span>(res,trie.<span class="hljs-built_in">query</span>(b[p],dep,<span class="hljs-number">0</span>));<br>			&#125;<br>		&#125;<br>		ans=<span class="hljs-built_in">max</span>(ans,res);<br>	&#125;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>	<span class="hljs-built_in">input</span>();<br>	<span class="hljs-built_in">solve</span>(fullset,<span class="hljs-number">30</span>);<br>	<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%lld\n&quot;</span>,ans);<br>	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
-<p>不给submission了（</p>
+</ul>
 
                 
               </div>
@@ -861,7 +835,7 @@ Alice 想最大化分数，Bob 想最小化分数。双方最优策略下，求�
   
     <span>></span>
     
-  <a href="/Hexo-blog/categories/2025sm%E6%A8%A1%E6%8B%9F%E8%B5%9B/20/" class="category-chain-item">20</a>
+  <a href="/Hexo-blog/categories/2025sm%E6%A8%A1%E6%8B%9F%E8%B5%9B/25/" class="category-chain-item">25</a>
   
   
 
@@ -883,8 +857,8 @@ Alice 想最大化分数，Bob 想最小化分数。双方最优策略下，求�
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>ARC122D XOR Game 题解</div>
-      <div>https://formu1-github.github.io/Hexo-blog/2025/10/20/ARC122D-XOR-Game-题解/</div>
+      <div>CF1310D Tourism 题解</div>
+      <div>https://formu1-github.github.io/Hexo-blog/2025/10/23/CF1310D-Tourism-题解/</div>
     </div>
     <div class="license-meta">
       
@@ -896,7 +870,7 @@ Alice 想最大化分数，Bob 想最小化分数。双方最优策略下，求�
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2025年10月20日</div>
+          <div>2025年10月23日</div>
         </div>
       
       
@@ -928,18 +902,12 @@ Alice 想最大化分数，Bob 想最小化分数。双方最优策略下，求�
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/Hexo-blog/2025/10/20/P-9199-9202-%E3%80%8CGMOI-R2-T2%E3%80%8D%E7%8C%AB%E8%80%B3%E5%B0%8F-%E9%A2%98%E8%A7%A3/" title="P-9199-9202 「GMOI R2-T2」猫耳小 题解">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">P-9199-9202 「GMOI R2-T2」猫耳小 题解</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/Hexo-blog/2025/10/17/P5102-JOI-2016-Final-%E9%A2%86%E5%9C%B0-Territory-%E9%A2%98%E8%A7%A3/" title="P5102 [JOI 2016 Final] 领地 / Territory 题解">
-                        <span class="hidden-mobile">P5102 [JOI 2016 Final] 领地 / Territory 题解</span>
+                      <a href="/Hexo-blog/2025/10/23/P9464-EGOI-2023-Padel-Prize-Pursuit-%E8%BF%BD%E6%A2%A6%E7%AC%BC%E5%BC%8F%E7%BD%91%E7%90%83-%E9%A2%98%E8%A7%A3/" title="P9464 [EGOI 2023] Padel Prize Pursuit / 追梦笼式网球 题解">
+                        <span class="hidden-mobile">P9464 [EGOI 2023] Padel Prize Pursuit / 追梦笼式网球 题解</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
