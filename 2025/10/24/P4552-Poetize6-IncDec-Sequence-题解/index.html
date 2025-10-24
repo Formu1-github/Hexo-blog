@@ -19,23 +19,21 @@
   <meta name="author" content="Formu1">
   <meta name="keywords" content="">
   
-    <meta name="description" content="link T2 desu  有 nnn 只宝可梦，初始第 111 只在竞技场上。每只宝可梦有 mmm 个属性，第 iii 只宝可梦的第 jjj 个属性为 ai,ja_{i,j}ai,j​，雇佣费用为 cic_ici​。 允许操作：   属性提升：选 i,j,ki, j, ki,j,k，将 ai,ja_{i,j}ai,j​ 永久增加 kkk，费用为 kkk   雇佣对战：选 i,ji, ji,j，雇">
+    <meta name="description" content="link T1 desu 我去我怎么连这么简单的差分都没有想到（） 显然差分之后就变成了选取一正一负两个数抵消。这里只考虑 2∼n2\sim n2∼n 的差分数组。 那么令正数的和为 upupup，负数的和的相反数为 lololo，那么操作次数即为 max⁡(up,lo)\max(up,lo)max(up,lo)。 这其中的 min⁡(up,lo)\min(up,lo)min(up,lo) 次用于">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CF1936C Pokémon Arena 题解">
-<meta property="og:url" content="https://formu1-github.github.io/Hexo-blog/2025/10/22/CF1936C-Pokemon-Arena-%E9%A2%98%E8%A7%A3/index.html">
+<meta property="og:title" content="P4552 [Poetize6] IncDec Sequence 题解">
+<meta property="og:url" content="https://formu1-github.github.io/Hexo-blog/2025/10/24/P4552-Poetize6-IncDec-Sequence-%E9%A2%98%E8%A7%A3/index.html">
 <meta property="og:site_name" content="Formu1">
-<meta property="og:description" content="link T2 desu  有 nnn 只宝可梦，初始第 111 只在竞技场上。每只宝可梦有 mmm 个属性，第 iii 只宝可梦的第 jjj 个属性为 ai,ja_{i,j}ai,j​，雇佣费用为 cic_ici​。 允许操作：   属性提升：选 i,j,ki, j, ki,j,k，将 ai,ja_{i,j}ai,j​ 永久增加 kkk，费用为 kkk   雇佣对战：选 i,ji, ji,j，雇">
+<meta property="og:description" content="link T1 desu 我去我怎么连这么简单的差分都没有想到（） 显然差分之后就变成了选取一正一负两个数抵消。这里只考虑 2∼n2\sim n2∼n 的差分数组。 那么令正数的和为 upupup，负数的和的相反数为 lololo，那么操作次数即为 max⁡(up,lo)\max(up,lo)max(up,lo)。 这其中的 min⁡(up,lo)\min(up,lo)min(up,lo) 次用于">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://formu1-github.github.io/Hexo-blog/2025/10/22/CF1936C-Pokemon-Arena-%E9%A2%98%E8%A7%A3/1.png">
-<meta property="article:published_time" content="2025-10-22T11:17:50.000Z">
-<meta property="article:modified_time" content="2025-10-22T12:36:27.130Z">
+<meta property="article:published_time" content="2025-10-24T13:43:38.000Z">
+<meta property="article:modified_time" content="2025-10-24T13:58:43.388Z">
 <meta property="article:author" content="Formu1">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://formu1-github.github.io/Hexo-blog/2025/10/22/CF1936C-Pokemon-Arena-%E9%A2%98%E8%A7%A3/1.png">
   
   
   
-  <title>CF1936C Pokémon Arena 题解 - Formu1</title>
+  <title>P4552 [Poetize6] IncDec Sequence 题解 - Formu1</title>
 
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
@@ -213,7 +211,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="CF1936C Pokémon Arena 题解"></span>
+            <span id="subtitle" data-typed-text="P4552 [Poetize6] IncDec Sequence 题解"></span>
           
         </div>
 
@@ -224,8 +222,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-10-22 19:17" pubdate>
-          2025年10月22日 晚上
+        <time datetime="2025-10-24 21:43" pubdate>
+          2025年10月24日 晚上
         </time>
       </span>
     
@@ -236,7 +234,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          720 字
+          299 字
         
       </span>
     
@@ -247,7 +245,7 @@
         
         
         
-          7 分钟
+          3 分钟
         
       </span>
     
@@ -640,17 +638,17 @@
     
     
     <div class="category-sub row nomargin-x">
-      <a class="category-subitem 
+      <a class="category-subitem collapsed
           list-group-item category-item-action col-10 col-md-11 col-xm-11" title="24"
         id="heading-1ff1de774005f8da13f42943881c655f" role="tab" data-toggle="collapse" href="#collapse-1ff1de774005f8da13f42943881c655f"
-        aria-expanded="true"
+        aria-expanded="false"
       >
         24
         <span class="list-group-count">(3)</span>
         <i class="iconfont icon-arrowright"></i>
       </a>
       
-      <div class="category-collapse collapse show" id="collapse-1ff1de774005f8da13f42943881c655f"
+      <div class="category-collapse collapse " id="collapse-1ff1de774005f8da13f42943881c655f"
            role="tabpanel" aria-labelledby="heading-1ff1de774005f8da13f42943881c655f">
         
         
@@ -671,7 +669,7 @@
       
         <a href="/Hexo-blog/2025/10/22/CF1936C-Pokemon-Arena-%E9%A2%98%E8%A7%A3/" title="CF1936C Pokémon Arena 题解"
            class="list-group-item list-group-item-action
-           active">
+           ">
           <span class="category-post">CF1936C Pokémon Arena 题解</span>
         </a>
       
@@ -750,17 +748,17 @@
     
     
     <div class="category-sub row nomargin-x">
-      <a class="category-subitem collapsed
+      <a class="category-subitem 
           list-group-item category-item-action col-10 col-md-11 col-xm-11" title="26"
         id="heading-4e732ced3463d06de0ca9a15b6153677" role="tab" data-toggle="collapse" href="#collapse-4e732ced3463d06de0ca9a15b6153677"
-        aria-expanded="false"
+        aria-expanded="true"
       >
         26
         <span class="list-group-count">(1)</span>
         <i class="iconfont icon-arrowright"></i>
       </a>
       
-      <div class="category-collapse collapse " id="collapse-4e732ced3463d06de0ca9a15b6153677"
+      <div class="category-collapse collapse show" id="collapse-4e732ced3463d06de0ca9a15b6153677"
            role="tabpanel" aria-labelledby="heading-4e732ced3463d06de0ca9a15b6153677">
         
         
@@ -772,7 +770,7 @@
       
         <a href="/Hexo-blog/2025/10/24/P4552-Poetize6-IncDec-Sequence-%E9%A2%98%E8%A7%A3/" title="P4552 [Poetize6] IncDec Sequence 题解"
            class="list-group-item list-group-item-action
-           ">
+           active">
           <span class="category-post">P4552 [Poetize6] IncDec Sequence 题解</span>
         </a>
       
@@ -845,44 +843,30 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">CF1936C Pokémon Arena 题解</h1>
+            <h1 id="seo-header">P4552 [Poetize6] IncDec Sequence 题解</h1>
             
             
               <div class="markdown-body">
                 
-                <p><a target="_blank" rel="noopener" href="https://codeforces.com/contest/1936/problem/C">link</a> T2 desu</p>
-<blockquote>
-<p>有 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">n</span></span></span></span> 只宝可梦，初始第 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span> 只在竞技场上。每只宝可梦有 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi></mrow><annotation encoding="application/x-tex">m</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">m</span></span></span></span> 个属性，第 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6595em;"></span><span class="mord mathnormal">i</span></span></span></span> 只宝可梦的第 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>j</mi></mrow><annotation encoding="application/x-tex">j</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.854em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.05724em;">j</span></span></span></span> 个属性为 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mrow><mi>i</mi><mo separator="true">,</mo><mi>j</mi></mrow></msub></mrow><annotation encoding="application/x-tex">a_{i,j}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7167em;vertical-align:-0.2861em;"></span><span class="mord"><span class="mord mathnormal">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">i</span><span class="mpunct mtight">,</span><span class="mord mathnormal mtight" style="margin-right:0.05724em;">j</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span></span></span></span>，雇佣费用为 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>c</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">c_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5806em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">c</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>。</p>
-<p>允许操作：</p>
+                <p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P4552">link</a> T1 desu</p>
+<p>我去我怎么连这么简单的差分都没有想到（）</p>
+<p>显然差分之后就变成了选取一正一负两个数抵消。这里只考虑 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mo>∼</mo><mi>n</mi></mrow><annotation encoding="application/x-tex">2\sim n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">2</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">∼</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">n</span></span></span></span> 的差分数组。</p>
+<p>那么令正数的和为 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi><mi>p</mi></mrow><annotation encoding="application/x-tex">up</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">u</span><span class="mord mathnormal">p</span></span></span></span>，负数的和的<strong>相反数</strong>为 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>l</mi><mi>o</mi></mrow><annotation encoding="application/x-tex">lo</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord mathnormal">o</span></span></span></span>，那么操作次数即为 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>max</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>u</mi><mi>p</mi><mo separator="true">,</mo><mi>l</mi><mi>o</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\max(up,lo)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mop">max</span><span class="mopen">(</span><span class="mord mathnormal">u</span><span class="mord mathnormal">p</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord mathnormal">o</span><span class="mclose">)</span></span></span></span>。</p>
+<p>这其中的 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>min</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>u</mi><mi>p</mi><mo separator="true">,</mo><mi>l</mi><mi>o</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\min(up,lo)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mop">min</span><span class="mopen">(</span><span class="mord mathnormal">u</span><span class="mord mathnormal">p</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord mathnormal">o</span><span class="mclose">)</span></span></span></span> 次用于给差分数组抹平。而我们现在考虑剩下的 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">∣</mi><mi>u</mi><mi>p</mi><mo>−</mo><mi>l</mi><mi>o</mi><mi mathvariant="normal">∣</mi></mrow><annotation encoding="application/x-tex">|up-lo|</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">∣</span><span class="mord mathnormal">u</span><span class="mord mathnormal">p</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord mathnormal">o</span><span class="mord">∣</span></span></span></span> 次。</p>
+<p>显然现在差分数组内部只有正数或只有负数。</p>
+<p>那么这些正数/负数有两种选择消失：</p>
 <ol>
 <li class="lvl-3">
-<p><strong>属性提升</strong>：选 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi><mo separator="true">,</mo><mi>j</mi><mo separator="true">,</mo><mi>k</mi></mrow><annotation encoding="application/x-tex">i, j, k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">i</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.05724em;">j</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span></span></span></span>，将 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mrow><mi>i</mi><mo separator="true">,</mo><mi>j</mi></mrow></msub></mrow><annotation encoding="application/x-tex">a_{i,j}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7167em;vertical-align:-0.2861em;"></span><span class="mord"><span class="mord mathnormal">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">i</span><span class="mpunct mtight">,</span><span class="mord mathnormal mtight" style="margin-right:0.05724em;">j</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span></span></span></span> 永久增加 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span></span></span></span>，费用为 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span></span></span></span></p>
+<p>选择与 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">a_1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5806em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> 抵消，这样子会修改 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">a_1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5806em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> 的值，也就等于多出一种结果。</p>
 </li>
 <li class="lvl-3">
-<p><strong>雇佣对战</strong>：选 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi><mo separator="true">,</mo><mi>j</mi></mrow><annotation encoding="application/x-tex">i, j</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.854em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">i</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.05724em;">j</span></span></span></span>，雇佣第 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6595em;"></span><span class="mord mathnormal">i</span></span></span></span> 只宝可梦与当前场上宝可梦比较属性 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>j</mi></mrow><annotation encoding="application/x-tex">j</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.854em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.05724em;">j</span></span></span></span></p>
-<ul class="lvl-3">
-<li class="lvl-5">若 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mrow><mi>i</mi><mo separator="true">,</mo><mi>j</mi></mrow></msub><mo>≥</mo></mrow><annotation encoding="application/x-tex">a_{i,j} \ge</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.9221em;vertical-align:-0.2861em;"></span><span class="mord"><span class="mord mathnormal">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">i</span><span class="mpunct mtight">,</span><span class="mord mathnormal mtight" style="margin-right:0.05724em;">j</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≥</span></span></span></span> 当前场上宝可梦的属性 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>j</mi></mrow><annotation encoding="application/x-tex">j</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.854em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.05724em;">j</span></span></span></span>，则 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6595em;"></span><span class="mord mathnormal">i</span></span></span></span> 获胜并留在场上</li>
-<li class="lvl-5">费用为 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>c</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">c_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5806em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">c</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></li>
-</ul>
+<p>选择与 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msub></mrow><annotation encoding="application/x-tex">a_{n+1}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6389em;vertical-align:-0.2083em;"></span><span class="mord"><span class="mord mathnormal">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">n</span><span class="mbin mtight">+</span><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2083em;"><span></span></span></span></span></span></span></span></span></span> 抵消。</p>
 </li>
 </ol>
-<p>目标：让第 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">n</span></span></span></span> 只宝可梦站在竞技场上。求最小总费用。</p>
-</blockquote>
-<hr>
-<p>观察一下可以发现一个宝可梦的一种属性是没有多次使用的必要的。</p>
-<p>因为是永久修改。直接在一开始就修改至最后一次使用的值就会更优。</p>
-<p>那么我们就可以直接最短路。</p>
-<p>对于同一属性类型 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>j</mi></mrow><annotation encoding="application/x-tex">j</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.854em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.05724em;">j</span></span></span></span>，显然所有宝可梦都可以基于 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>j</mi></mrow><annotation encoding="application/x-tex">j</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.854em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.05724em;">j</span></span></span></span> 属性连上 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo stretchy="false">(</mo><mi>n</mi><mo>−</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">n(n-1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">n</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mclose">)</span></span></span></span> 条边。但这样太多了。</p>
-<p>考虑将 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mrow><mi>i</mi><mo separator="true">,</mo><mi>j</mi></mrow></msub></mrow><annotation encoding="application/x-tex">a_{i,j}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7167em;vertical-align:-0.2861em;"></span><span class="mord"><span class="mord mathnormal">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">i</span><span class="mpunct mtight">,</span><span class="mord mathnormal mtight" style="margin-right:0.05724em;">j</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span></span></span></span> 排序之后按照前缀链优化。相当于给 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>j</mi></mrow><annotation encoding="application/x-tex">j</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.854em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.05724em;">j</span></span></span></span> 类型搞一个专门的梯子上下。然后修改权值保存在链的每两个相邻节点中。</p>
-<p>但是这样子会导致 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>c</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">c_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5806em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">c</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> 判定出现问题。如果在点上保存 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>c</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">c_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5806em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">c</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>，会使得经过这个点但对战目标不是这个点的同样会被收取费用。</p>
-<p>解决方法是不在原先的 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>∼</mo><mi>n</mi></mrow><annotation encoding="application/x-tex">1\sim n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">∼</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">n</span></span></span></span> 的点建梯子，而是专门开出 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">n</span></span></span></span> 个点作为梯子。如果确定在某个点结束修改，就退出梯子即可。</p>
-<p>只需要在退出梯子的位置存 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>c</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">c_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5806em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">c</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> 就不会有问题了。</p>
-<p>如图所示：</p>
-<p><img src="1.png" srcset="/Hexo-blog/img/loading.gif" lazyload alt=""></p>
-<p>（这里是无向边，纯粹是不想画箭头awa，毕竟都是双向有向边嘛）</p>
-<p>代码</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-type">int</span> n,m,nm;<br>ll c[maxn];<br>vector&lt;ll&gt; a[maxn];<span class="hljs-comment">//正常的a</span><br>vector&lt;PII&gt; b[maxn];<span class="hljs-comment">//按j维护的a</span><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">input</span><span class="hljs-params">()</span></span>&#123;<br>	n=<span class="hljs-built_in">read</span>();m=<span class="hljs-built_in">read</span>();<br>	nm=n*(m<span class="hljs-number">+1</span>);<br>	<span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">1</span>;i&lt;=n;++i) c[i]=<span class="hljs-built_in">read</span>();<br>	<span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">1</span>;i&lt;=n;++i)&#123;<br>		a[i].<span class="hljs-built_in">emplace_back</span>(<span class="hljs-number">0</span>);<br>		<span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> j=<span class="hljs-number">1</span>;j&lt;=m;++j) a[i].<span class="hljs-built_in">emplace_back</span>(<span class="hljs-built_in">read</span>());<br>	&#125;<br>	<span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> j=<span class="hljs-number">1</span>;j&lt;=m;++j)&#123;<br>		b[j].<span class="hljs-built_in">push_back</span>(&#123;-inf,<span class="hljs-number">0</span>&#125;);<br>		<span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">1</span>;i&lt;=n;++i)&#123;<br>			b[j].<span class="hljs-built_in">push_back</span>(&#123;a[i][j],i&#125;);<br>		&#125;<br>	&#125;<br>&#125;<br><br><br><span class="hljs-keyword">struct</span> <span class="hljs-title class_">Edge</span>&#123;<br>	<span class="hljs-type">int</span> _this,nxt;<br>	ll w;<br>	<span class="hljs-built_in">Edge</span>()&#123;<br>		_this=nxt=w=<span class="hljs-number">0</span>;<br>	&#125;<br>&#125;edge[maxn&lt;&lt;<span class="hljs-number">1</span>];<br><span class="hljs-type">int</span> headnxt[maxn],idx;<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">merge</span><span class="hljs-params">(<span class="hljs-type">int</span> from,<span class="hljs-type">int</span> to,ll w)</span></span>&#123;<br>	edge[++idx]._this=to;<br>	edge[idx].w=w;<br>	edge[idx].nxt=headnxt[from];<br>	headnxt[from]=idx;<br>&#125;<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">make_edge</span><span class="hljs-params">(<span class="hljs-type">int</span> col)</span></span>&#123;<span class="hljs-comment">//制定一个颜色，构建一个梯子</span><br>	<span class="hljs-built_in">sort</span>(b[col].<span class="hljs-built_in">begin</span>(),b[col].<span class="hljs-built_in">end</span>());<br>	<span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">2</span>;i&lt;=n;++i)&#123;<br>		<span class="hljs-type">int</span> u=col*n+i<span class="hljs-number">-1</span>,v=col*n+i;<br>		ll w=b[col][i].first-b[col][i<span class="hljs-number">-1</span>].first;<br>		<span class="hljs-built_in">merge</span>(u,v,<span class="hljs-number">0</span>);<br>		<span class="hljs-built_in">merge</span>(v,u,w);<br>	&#125;<br>	<span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">1</span>;i&lt;=n;++i)&#123;<br>		<span class="hljs-type">int</span> u=col*n+i,v=b[col][i].second;<br>		<span class="hljs-built_in">merge</span>(u,v,c[v]);<br>		<span class="hljs-built_in">merge</span>(v,u,<span class="hljs-number">0</span>);<br>	&#125;<br>&#125;<br><br><br><span class="hljs-comment">/*</span><br><span class="hljs-comment">后面跑dij即可</span><br><span class="hljs-comment">*/</span><br></code></pre></td></tr></table></figure>
-<p><a target="_blank" rel="noopener" href="https://codeforces.com/contest/1936/submission/344854468">sub</a></p>
+<p>那么显然有 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">∣</mi><mi>u</mi><mi>p</mi><mo>−</mo><mi>l</mi><mi>o</mi><mi mathvariant="normal">∣</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">|up-lo|+1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">∣</span><span class="mord mathnormal">u</span><span class="mord mathnormal">p</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord mathnormal">o</span><span class="mord">∣</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span> 中结果了。</p>
+<p>简单代码：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>	<span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%lld&quot;</span>,&amp;n);<br>	<span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">1</span>;i&lt;=n;++i)&#123;<br>		<span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%lld&quot;</span>,&amp;a[i]);<br>		b[i]=a[i]-a[i<span class="hljs-number">-1</span>];<br>	&#125;<br>	<span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">2</span>;i&lt;=n;++i)&#123;<br>		<span class="hljs-keyword">if</span>(b[i]&lt;<span class="hljs-number">0</span>) lo+=-b[i];<br>		<span class="hljs-keyword">if</span>(b[i]&gt;<span class="hljs-number">0</span>) up+=b[i];<br>	&#125;<br>	<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%lld\n&quot;</span>,<span class="hljs-built_in">max</span>(lo,up));<br>	<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%lld&quot;</span>,<span class="hljs-built_in">abs</span>(lo-up)<span class="hljs-number">+1</span>);<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>唐啊我。</p>
 
                 
               </div>
@@ -906,7 +890,7 @@
   
     <span>></span>
     
-  <a href="/Hexo-blog/categories/2025sm%E6%A8%A1%E6%8B%9F%E8%B5%9B/24/" class="category-chain-item">24</a>
+  <a href="/Hexo-blog/categories/2025sm%E6%A8%A1%E6%8B%9F%E8%B5%9B/26/" class="category-chain-item">26</a>
   
   
 
@@ -928,8 +912,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>CF1936C Pokémon Arena 题解</div>
-      <div>https://formu1-github.github.io/Hexo-blog/2025/10/22/CF1936C-Pokemon-Arena-题解/</div>
+      <div>P4552 [Poetize6] IncDec Sequence 题解</div>
+      <div>https://formu1-github.github.io/Hexo-blog/2025/10/24/P4552-Poetize6-IncDec-Sequence-题解/</div>
     </div>
     <div class="license-meta">
       
@@ -941,7 +925,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2025年10月22日</div>
+          <div>2025年10月24日</div>
         </div>
       
       
@@ -973,18 +957,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/Hexo-blog/2025/10/22/CF983E-NN-country-%E9%A2%98%E8%A7%A3/" title="CF983E NN country 题解">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">CF983E NN country 题解</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/Hexo-blog/2025/10/22/CF1852A-Ntarsis-Set-%E9%A2%98%E8%A7%A3/" title="CF1852A Ntarsis&#39; Set 题解">
-                        <span class="hidden-mobile">CF1852A Ntarsis&#39; Set 题解</span>
+                      <a href="/Hexo-blog/2025/10/23/P3203-HNOI2010-%E5%BC%B9%E9%A3%9E%E7%BB%B5%E7%BE%8A-%E9%A2%98%E8%A7%A3/" title="P3203 [HNOI2010] 弹飞绵羊 题解">
+                        <span class="hidden-mobile">P3203 [HNOI2010] 弹飞绵羊 题解</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
