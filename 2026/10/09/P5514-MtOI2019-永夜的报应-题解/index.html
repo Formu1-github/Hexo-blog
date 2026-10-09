@@ -30,7 +30,7 @@
 <meta property="og:image" content="https://formu1-github.github.io/Hexo-blog/2026/10/09/P5514-MtOI2019-%E6%B0%B8%E5%A4%9C%E7%9A%84%E6%8A%A5%E5%BA%94-%E9%A2%98%E8%A7%A3/2.png">
 <meta property="og:image" content="https://formu1-github.github.io/Hexo-blog/2026/10/09/P5514-MtOI2019-%E6%B0%B8%E5%A4%9C%E7%9A%84%E6%8A%A5%E5%BA%94-%E9%A2%98%E8%A7%A3/3.png">
 <meta property="article:published_time" content="2026-10-09T08:19:54.000Z">
-<meta property="article:modified_time" content="2026-10-09T09:11:11.178Z">
+<meta property="article:modified_time" content="2026-10-09T09:15:09.638Z">
 <meta property="article:author" content="Formu1">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://formu1-github.github.io/Hexo-blog/2026/10/09/P5514-MtOI2019-%E6%B0%B8%E5%A4%9C%E7%9A%84%E6%8A%A5%E5%BA%94-%E9%A2%98%E8%A7%A3/1.png">
@@ -322,13 +322,13 @@
 <hr>
 <p>考虑一件事情：<br>
 对于一个位（从高到低），</p>
-<p><img src="1.png" srcset="/Hexo-blog/img/loading.gif" lazyload alt=""></p>
+<img src="1.png" srcset="/Hexo-blog/img/loading.gif" lazyload style="zoom:60%;" />
 <p>首先，最高位考虑将所有为1的合并，如果能合并没有1，是最好的。如果合并有1，那也没办法，对吧</p>
-<p><img src="2.png" srcset="/Hexo-blog/img/loading.gif" lazyload alt=""></p>
+<img src="2.png" srcset="/Hexo-blog/img/loading.gif" lazyload style="zoom:60%;" />
 <p>接着，考虑对于所有最高位为1的值按照偶数个数拆分。<br>
 但是我们发现，这样子做一定不会更优。因为可能出现多个组里面第二高位异或之后是1，我们可以使得这些组重新合并，这样子就有可能会把这些1消掉<br>
 因此不需要考虑“拆分”这一操作</p>
-<p><img src="3.png" srcset="/Hexo-blog/img/loading.gif" lazyload alt=""></p>
+<img src="3.png" srcset="/Hexo-blog/img/loading.gif" lazyload style="zoom:60%;" />
 <p>同样的，受到最高位的启发，不妨尝试将第二高位=1且之前没有合并进的值合并。<br>
 由于我们已经知道“不需要考虑拆分（第二高位）这一操作”，所以合并完后，结果一定不劣<br>
 因此基础的做法可以先“按照最高位出现的位置”排个序，接着枚举最高位出现为j的值的段，将它们与之间合并的合并到一起</p>
