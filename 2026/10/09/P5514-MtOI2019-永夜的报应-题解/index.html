@@ -19,23 +19,27 @@
   <meta name="author" content="Formu1">
   <meta name="keywords" content="">
   
-    <meta name="description" content="原题链接 原比赛的 D 题。（虽然是乱序的）">
+    <meta name="description" content="@ 一个有 trick 的橙题。  考虑一件事情： 对于一个位（从高到低），  首先，最高位考虑将所有为1的合并，如果能合并没有1，是最好的。如果合并有1，那也没办法，对吧  接着，考虑对于所有最高位为1的值按照偶数个数拆分。 但是我们发现，这样子做一定不会更优。因为可能出现多个组里面第二高位异或之后是1，我们可以使得这些组重新合并，这样子就有可能会把这些1消掉 因此不需要考虑“拆分”这一操作">
 <meta property="og:type" content="article">
-<meta property="og:title" content="P1792 种树 题解">
-<meta property="og:url" content="https://formu1-github.github.io/Hexo-blog/2026/10/09/P1792-%E7%A7%8D%E6%A0%91-%E9%A2%98%E8%A7%A3/index.html">
+<meta property="og:title" content="P5514 [MtOI2019] 永夜的报应 题解">
+<meta property="og:url" content="https://formu1-github.github.io/Hexo-blog/2026/10/09/P5514-MtOI2019-%E6%B0%B8%E5%A4%9C%E7%9A%84%E6%8A%A5%E5%BA%94-%E9%A2%98%E8%A7%A3/index.html">
 <meta property="og:site_name" content="Formu1">
-<meta property="og:description" content="原题链接 原比赛的 D 题。（虽然是乱序的）">
+<meta property="og:description" content="@ 一个有 trick 的橙题。  考虑一件事情： 对于一个位（从高到低），  首先，最高位考虑将所有为1的合并，如果能合并没有1，是最好的。如果合并有1，那也没办法，对吧  接着，考虑对于所有最高位为1的值按照偶数个数拆分。 但是我们发现，这样子做一定不会更优。因为可能出现多个组里面第二高位异或之后是1，我们可以使得这些组重新合并，这样子就有可能会把这些1消掉 因此不需要考虑“拆分”这一操作">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2026-10-08T23:42:17.000Z">
-<meta property="article:modified_time" content="2026-10-08T23:43:07.255Z">
+<meta property="og:image" content="https://formu1-github.github.io/Hexo-blog/2026/10/09/P5514-MtOI2019-%E6%B0%B8%E5%A4%9C%E7%9A%84%E6%8A%A5%E5%BA%94-%E9%A2%98%E8%A7%A3/1.png">
+<meta property="og:image" content="https://formu1-github.github.io/Hexo-blog/2026/10/09/P5514-MtOI2019-%E6%B0%B8%E5%A4%9C%E7%9A%84%E6%8A%A5%E5%BA%94-%E9%A2%98%E8%A7%A3/2.png">
+<meta property="og:image" content="https://formu1-github.github.io/Hexo-blog/2026/10/09/P5514-MtOI2019-%E6%B0%B8%E5%A4%9C%E7%9A%84%E6%8A%A5%E5%BA%94-%E9%A2%98%E8%A7%A3/3.png">
+<meta property="article:published_time" content="2026-10-09T08:19:54.000Z">
+<meta property="article:modified_time" content="2026-10-09T09:11:11.178Z">
 <meta property="article:author" content="Formu1">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://formu1-github.github.io/Hexo-blog/2026/10/09/P5514-MtOI2019-%E6%B0%B8%E5%A4%9C%E7%9A%84%E6%8A%A5%E5%BA%94-%E9%A2%98%E8%A7%A3/1.png">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>P1792 种树 题解 - Formu1</title>
+  <title>P5514 [MtOI2019] 永夜的报应 题解 - Formu1</title>
 
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
@@ -213,7 +217,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="P1792 种树 题解"></span>
+            <span id="subtitle" data-typed-text="P5514 [MtOI2019] 永夜的报应 题解"></span>
           
         </div>
 
@@ -224,8 +228,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2026-10-09 07:42" pubdate>
-          2026年10月9日 早上
+        <time datetime="2026-10-09 16:19" pubdate>
+          2026年10月9日 下午
         </time>
       </span>
     
@@ -236,7 +240,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          16 字
+          368 字
         
       </span>
     
@@ -247,7 +251,7 @@
         
         
         
-          1 分钟
+          4 分钟
         
       </span>
     
@@ -308,13 +312,28 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">P1792 种树 题解</h1>
+            <h1 id="seo-header">P5514 [MtOI2019] 永夜的报应 题解</h1>
             
             
               <div class="markdown-body">
                 
-                <p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1792">原题链接</a></p>
-<p>原比赛的 D 题。（虽然是乱序的）</p>
+                <p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P5514">@</a></p>
+<p>一个有 trick 的橙题。</p>
+<hr>
+<p>考虑一件事情：<br>
+对于一个位（从高到低），</p>
+<p><img src="1.png" srcset="/Hexo-blog/img/loading.gif" lazyload alt=""></p>
+<p>首先，最高位考虑将所有为1的合并，如果能合并没有1，是最好的。如果合并有1，那也没办法，对吧</p>
+<p><img src="2.png" srcset="/Hexo-blog/img/loading.gif" lazyload alt=""></p>
+<p>接着，考虑对于所有最高位为1的值按照偶数个数拆分。<br>
+但是我们发现，这样子做一定不会更优。因为可能出现多个组里面第二高位异或之后是1，我们可以使得这些组重新合并，这样子就有可能会把这些1消掉<br>
+因此不需要考虑“拆分”这一操作</p>
+<p><img src="3.png" srcset="/Hexo-blog/img/loading.gif" lazyload alt=""></p>
+<p>同样的，受到最高位的启发，不妨尝试将第二高位=1且之前没有合并进的值合并。<br>
+由于我们已经知道“不需要考虑拆分（第二高位）这一操作”，所以合并完后，结果一定不劣<br>
+因此基础的做法可以先“按照最高位出现的位置”排个序，接着枚举最高位出现为j的值的段，将它们与之间合并的合并到一起</p>
+<p>进阶的做法，发现反正不为0的数都迟早要合并，不如直接扫一遍得了。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">define</span> fastio ios::sync_with_stdio(0);cin.tie(0);</span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-keyword">typedef</span> <span class="hljs-type">long</span> <span class="hljs-type">long</span> ll;<br><span class="hljs-type">const</span> <span class="hljs-type">int</span> maxn=<span class="hljs-number">1e6</span><span class="hljs-number">+35</span>;<br><span class="hljs-type">const</span> ll inf=<span class="hljs-number">1e18</span>;<br><br><span class="hljs-type">int</span> n;<br>ll a[maxn];<br>ll ans;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>	fastio;<br>	cin&gt;&gt;n;<br>	<span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">1</span>;i&lt;=n;++i)&#123;<br>		cin&gt;&gt;a[i];<br>		ans=ans^a[i];<br>	&#125;<br>	<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%lld\n&quot;</span>,ans);<br>	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
 
                 
               </div>
@@ -332,8 +351,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>P1792 种树 题解</div>
-      <div>https://formu1-github.github.io/Hexo-blog/2026/10/09/P1792-种树-题解/</div>
+      <div>P5514 [MtOI2019] 永夜的报应 题解</div>
+      <div>https://formu1-github.github.io/Hexo-blog/2026/10/09/P5514-MtOI2019-永夜的报应-题解/</div>
     </div>
     <div class="license-meta">
       
@@ -377,18 +396,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/Hexo-blog/2026/10/09/P11769-%E6%AD%8C%E5%94%B1%E7%BB%83%E4%B9%A0-%E9%A2%98%E8%A7%A3/" title="P11769 歌唱练习 题解">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">P11769 歌唱练习 题解</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/Hexo-blog/2026/10/08/Yoshinow-and-01-Game-%E9%A2%98%E8%A7%A3/" title="Yoshinow and 01 Game 题解">
-                        <span class="hidden-mobile">Yoshinow and 01 Game 题解</span>
+                      <a href="/Hexo-blog/2026/10/09/P11769-%E6%AD%8C%E5%94%B1%E7%BB%83%E4%B9%A0-%E9%A2%98%E8%A7%A3/" title="P11769 歌唱练习 题解">
+                        <span class="hidden-mobile">P11769 歌唱练习 题解</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
