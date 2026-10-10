@@ -4,6 +4,19 @@
   
   
   <entry>
+    <title>ABC343G Compress Strings 题解</title>
+    <link href="/Hexo-blog/2026/10/10/ABC343G-Compress-Strings-%E9%A2%98%E8%A7%A3/"/>
+    <url>/Hexo-blog/2026/10/10/ABC343G-Compress-Strings-%E9%A2%98%E8%A7%A3/</url>
+    
+    <content type="html"><![CDATA[<p>本文使用 deepseek 编写。</p><p><a href="https://atcoder.jp/contests/abc343/tasks/abc343_g">@</a></p><p>原比赛 C 题。</p><p><strong>1. 去冗余（剔除子串）</strong><br>如果字符串 A 是字符串 B 的子串，那么 A 就毫无用处（拼 B 时自动包含了 A）。把这种无用的 A 删掉，只保留互不包含的字符串。<br><em>（快速判断子串：字符串哈希）</em></p><p><strong>2. 预处理重叠部分（建图）</strong></p><p>观察发现，我们只需要考虑不同两个字符串的最长公共后/前缀，按照在串末尾拼接新串的方式跑即可。</p><p>因为显然将在最终串中出现的<strong>原先字符串</strong>按 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>l</mi></mrow><annotation encoding="application/x-tex">l</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span></span></span></span> 从小到大排序后，即可发现按照这样的顺序加入串可以转化为相邻两个串的关系。</p><p>拼接时，前一个串的后缀和后一个串的前缀重叠越多，总长度越短。</p><ul class="lvl-0"><li class="lvl-4"><p>计算两两之间的<strong>最大重叠长度</strong>。</p></li><li class="lvl-4"><p>建有向图：<code>i -&gt; j</code> 的边权 = <code>j的长度 - i和j的最大重叠长度</code>。</p></li></ul><p><strong>3. 状压DP（TSP旅行商问题）</strong><br><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>≤</mo><mn>20</mn></mrow><annotation encoding="application/x-tex">N \leq 20</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8193em;vertical-align:-0.136em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">20</span></span></span></span>，典型的状压 DP。问题变成：从任意点出发，经过所有点恰好一次，求最短路径。</p><ul class="lvl-0"><li class="lvl-4"><p><strong>状态定义</strong>：<code>dp[mask][i]</code> 表示已经使用了 <code>mask</code> 集合中的字符串，且最后一个拼的是 <code>i</code> 时的最短长度。</p></li><li class="lvl-4"><p><strong>初始化</strong>：<code>dp[1&lt;&lt;i][i] = s[i].length()</code>。</p></li><li class="lvl-4"><p><strong>状态转移</strong>：往后接一个没选过的 <code>j</code>：<br><code>dp[mask | (1&lt;&lt;j)][j] = min(dp[mask | (1&lt;&lt;j)][j], dp[mask][i] + s[j].length() - overlap[i][j])</code></p></li><li class="lvl-4"><p><strong>最终答案</strong>：<code>min(dp[(1&lt;&lt;n)-1][i])</code>（所有串都用完，且以任意串结尾的最小值）。</p></li></ul>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>P5514 [MtOI2019] 永夜的报应 题解</title>
     <link href="/Hexo-blog/2026/10/09/P5514-MtOI2019-%E6%B0%B8%E5%A4%9C%E7%9A%84%E6%8A%A5%E5%BA%94-%E9%A2%98%E8%A7%A3/"/>
     <url>/Hexo-blog/2026/10/09/P5514-MtOI2019-%E6%B0%B8%E5%A4%9C%E7%9A%84%E6%8A%A5%E5%BA%94-%E9%A2%98%E8%A7%A3/</url>
