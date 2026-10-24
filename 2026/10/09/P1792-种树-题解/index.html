@@ -19,17 +19,17 @@
   <meta name="author" content="Formu1">
   <meta name="keywords" content="">
   
-    <meta name="description" content="原题链接 原比赛的 D 题。（虽然是乱序的） 题目大意：给你 nnn 个环形点位，每一个点位都有一个权值 AiA_iAi​。你可以在一些点位上种一颗树，这样每个点 iii 获得的价值是 AiA_iAi​，树不能相邻，求最大化权值。  我用一种很奇怪的思路解释一下反悔贪心。 实际上你可以想象把它建模成一个**“不考虑边界的”**费用流模型。 如下所示：  令中间的横着的边的容量最大值是 111，代表">
+    <meta name="description" content="原题链接 原比赛的 D 题。（虽然是乱序的） 题目大意：给你 nnn 个环形点位，每一个点位都有一个权值 AiA_iAi​。你可以在一些点位上种一颗树，这样每个点 iii 获得的价值是 AiA_iAi​，树不能相邻，求最大化权值。  我用一种很奇怪的思路解释一下反悔贪心。 实际上你可以想象把它建模成一个 “不考虑边界的” 费用流模型。 如下所示：  令中间的横着的边的容量最大值是 111，代表这个">
 <meta property="og:type" content="article">
 <meta property="og:title" content="P1792 种树 题解">
 <meta property="og:url" content="https://formu1-github.github.io/Hexo-blog/2026/10/09/P1792-%E7%A7%8D%E6%A0%91-%E9%A2%98%E8%A7%A3/index.html">
 <meta property="og:site_name" content="Formu1">
-<meta property="og:description" content="原题链接 原比赛的 D 题。（虽然是乱序的） 题目大意：给你 nnn 个环形点位，每一个点位都有一个权值 AiA_iAi​。你可以在一些点位上种一颗树，这样每个点 iii 获得的价值是 AiA_iAi​，树不能相邻，求最大化权值。  我用一种很奇怪的思路解释一下反悔贪心。 实际上你可以想象把它建模成一个**“不考虑边界的”**费用流模型。 如下所示：  令中间的横着的边的容量最大值是 111，代表">
+<meta property="og:description" content="原题链接 原比赛的 D 题。（虽然是乱序的） 题目大意：给你 nnn 个环形点位，每一个点位都有一个权值 AiA_iAi​。你可以在一些点位上种一颗树，这样每个点 iii 获得的价值是 AiA_iAi​，树不能相邻，求最大化权值。  我用一种很奇怪的思路解释一下反悔贪心。 实际上你可以想象把它建模成一个 “不考虑边界的” 费用流模型。 如下所示：  令中间的横着的边的容量最大值是 111，代表这个">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://formu1-github.github.io/Hexo-blog/2026/10/09/P1792-%E7%A7%8D%E6%A0%91-%E9%A2%98%E8%A7%A3/1.webp">
 <meta property="og:image" content="https://formu1-github.github.io/Hexo-blog/2026/10/09/P1792-%E7%A7%8D%E6%A0%91-%E9%A2%98%E8%A7%A3/2.jpg">
 <meta property="article:published_time" content="2026-10-08T23:42:17.000Z">
-<meta property="article:modified_time" content="2026-10-24T02:02:47.436Z">
+<meta property="article:modified_time" content="2026-10-24T02:06:14.529Z">
 <meta property="article:author" content="Formu1">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://formu1-github.github.io/Hexo-blog/2026/10/09/P1792-%E7%A7%8D%E6%A0%91-%E9%A2%98%E8%A7%A3/1.webp">
@@ -389,7 +389,7 @@
 <p>题目大意：给你 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">n</span></span></span></span> 个环形点位，每一个点位都有一个权值 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>A</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">A_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">A</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>。你可以在一些点位上种一颗树，这样每个点 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6595em;"></span><span class="mord mathnormal">i</span></span></span></span> 获得的价值是 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>A</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">A_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">A</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>，树不能相邻，求最大化权值。</p>
 <hr>
 <p>我用一种很奇怪的思路解释一下反悔贪心。</p>
-<p>实际上你可以想象把它建模成一个**“不考虑边界的”**费用流模型。</p>
+<p>实际上你可以想象把它建模成一个 <strong>“不考虑边界的”</strong> 费用流模型。</p>
 <p>如下所示：</p>
 <img src="1.webp" srcset="/Hexo-blog/img/loading.gif" lazyload alt="1" style="zoom: 67%;" />
 <p>令中间的横着的边的容量最大值是 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span>，代表这个点是否被选择。</p>
